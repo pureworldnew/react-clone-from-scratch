@@ -23,6 +23,8 @@ import Clock from 'react-clock';
 import moment from 'moment';
 import { buyUrl, loginRoot } from '../constants/defaultValues';
 import Topnav from '../containers/navs/Topnav';
+import Banner from '../containers/navs/Banner';
+import HomeContent from '../containers/pages/home/HomeContent';
 
 const slideItems = [
   {
@@ -60,9 +62,13 @@ const Home = () => {
   );
 
   return (
-    <header className="header">
-      <Topnav />
-    </header>
+    <div>
+      <header className="header">
+        <Topnav />
+      </header>
+      <Banner />
+      <HomeContent />
+    </div>
   );
 };
 
