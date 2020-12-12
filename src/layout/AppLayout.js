@@ -3,15 +3,12 @@ import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
 
 import TopNav from '../containers/navs/Topnav';
-import FpsTopNav from '../containers/navs/FpsTopnav';
-import Sidebar from '../containers/navs/Sidebar';
 import Footer from '../containers/navs/Footer';
 
 const AppLayout = ({ containerClassnames, children, history }) => {
   return (
     <div id="app-container" className={containerClassnames}>
-      <FpsTopNav history={history} />
-      <Sidebar />
+      <TopNav history={history} />
       <main>
         <div className="container-fluid">{children}</div>
       </main>

@@ -5,7 +5,15 @@
 /* eslint-disable jsx-a11y/no-static-element-interactions */
 /* eslint-disable no-use-before-define */
 import React, { useState, useEffect, useRef } from 'react';
-
+import {
+  Card,
+  Button,
+  CardHeader,
+  CardFooter,
+  CardBody,
+  CardTitle,
+  CardText,
+} from 'reactstrap';
 import { NavLink } from 'react-router-dom';
 import classnames from 'classnames';
 import { scroller } from 'react-scroll';
@@ -13,9 +21,7 @@ import Headroom from 'react-headroom';
 import Calendar from 'react-calendar';
 import Clock from 'react-clock';
 import moment from 'moment';
-import GlideComponent from '../components/carousel/GlideComponent';
 import { buyUrl, loginRoot } from '../constants/defaultValues';
-import CountDownTimer from '../components/CountDownTimer';
 import 'react-calendar/dist/Calendar.css';
 import 'react-clock/dist/Clock.css';
 
@@ -26,9 +32,9 @@ const slideSettings = {
   hideNav: true,
   peek: { before: 10, after: 10 },
   breakpoints: {
-    '600': { perView: 1 },
-    '992': { perView: 2 },
-    '1200': { perView: 3 },
+    600: { perView: 1 },
+    992: { perView: 2 },
+    1200: { perView: 3 },
   },
 };
 
@@ -171,457 +177,20 @@ const Home = () => {
     moment().utcOffset('-22:00', true).toDate()
   );
 
-  useEffect(() => {
-    window.addEventListener('scroll', onWindowScroll);
-    window.addEventListener('resize', onWindowResize);
-    window.addEventListener('click', onWindowClick);
-
-    document.body.classList.add('no-footer');
-    return () => {
-      window.removeEventListener('scroll', onWindowScroll);
-      window.removeEventListener('resize', onWindowResize);
-      window.removeEventListener('click', onWindowClick);
-      document.body.classList.remove('no-footer');
-    };
-  }, []);
-
-  useEffect(() => {
-    const interval = setInterval(
-      () => setToday(moment().utcOffset('-22:00', true).toDate()),
-      1000
-    );
-
-    return () => {
-      clearInterval(interval);
-    };
-  }, []);
-
-  const onWindowResize = (event) => {
-    const homeRect = refRowHome.current.getBoundingClientRect();
-
-    const homeSection = refSectionHome.current;
-    homeSection.style.backgroundPositionX = `${homeRect.x - 580}px`;
-
-    const footerSection = refSectionFooter.current;
-    footerSection.style.backgroundPositionX = `${
-      event.target.innerWidth - homeRect.x - 2000
-    }px`;
-
-    if (event.target.innerWidth >= 992) {
-      setShowMobileMenu(false);
-    }
-  };
-
-  const onWindowClick = () => {
-    setShowMobileMenu(false);
-  };
-
-  const onWindowScroll = () => {
-    setShowMobileMenu(false);
-  };
-
-  const scrollTo = (event, target) => {
-    event.preventDefault();
-    scroller.scrollTo(target, {
-      duration: 500,
-      delay: 0,
-      smooth: 'easeInOutQuart',
-      offset: -100,
-    });
-    return false;
-  };
-
-  const onChange = (date) => {
-    setToday(date);
-  };
-
   return (
-    <div
-      className={classnames('landing-page', {
-        'show-mobile-menu': showMobileMenu,
-      })}
-    >
-      <div className="mobile-menu" onClick={(event) => event.stopPropagation()}>
-        <a
-          className="logo-mobile c-pointer"
-          href="#scroll"
-          onClick={(event) => scrollTo(event, 'home')}
-        >
-          <span />
-        </a>
-        <ul className="navbar-nav">
-          <li className="nav-item">
-            <a
-              className="c-pointer"
-              href="#scroll"
-              onClick={(event) => scrollTo(event, 'accounts')}
-            >
-              ACCOUNTS
-            </a>
-          </li>
-          <li className="nav-item">
-            <a
-              className="c-pointer"
-              href="#scroll"
-              onClick={(event) => scrollTo(event, 'projects')}
-            >
-              PROJECTS
-            </a>
-          </li>
-          <li className="nav-item">
-            <a
-              className="c-pointer"
-              href="#scroll"
-              onClick={(event) => scrollTo(event, 'clients')}
-            >
-              CLIENTS
-            </a>
-          </li>
-          <li className="nav-item">
-            <a
-              className="c-pointer"
-              href="#scroll"
-              onClick={(event) => scrollTo(event, 'times')}
-            >
-              TIME
-            </a>
-          </li>
-          <li className="nav-item">
-            <a
-              className="c-pointer"
-              href="#scroll"
-              onClick={(event) => scrollTo(event, 'themes')}
-            >
-              WALLET
-            </a>
-          </li>
-          <li className="nav-item">
-            <div className="separator" />
-          </li>
-          <li className="nav-item text-center">
-            <a
-              className="btn btn-outline-primary btn-sm mobile-menu-cta"
-              rel="noopener noreferrer"
-              href={loginRoot}
-            >
-              LOGIN
-            </a>
-          </li>
-        </ul>
-      </div>
-
-      <div className="main-container">
-        <Headroom className="landing-page-nav">
-          <nav>
-            <div className="container d-flex align-items-center justify-content-between">
-              <a
-                className="navbar-logo pull-left c-pointer"
-                href="#scroll"
-                onClick={(event) => scrollTo(event, 'home')}
-              >
-                <span className="white" />
-                <span className="dark" />
-              </a>
-              <ul className="navbar-nav d-none d-lg-flex flex-row">
-                <li className="nav-item">
-                  <a
-                    className="c-pointer"
-                    href="#scroll"
-                    onClick={(event) => scrollTo(event, 'accounts')}
-                  >
-                    ACCOUNTS
-                  </a>
-                </li>
-                <li className="nav-item">
-                  <a
-                    className="c-pointer"
-                    href="#scroll"
-                    onClick={(event) => scrollTo(event, 'projects')}
-                  >
-                    PROJECTS
-                  </a>
-                </li>
-                <li className="nav-item">
-                  <a
-                    className="c-pointer"
-                    href="#scroll"
-                    onClick={(event) => scrollTo(event, 'clients')}
-                  >
-                    CLIENTS
-                  </a>
-                </li>
-                <li className="nav-item">
-                  <a
-                    className="c-pointer"
-                    href="#scroll"
-                    onClick={(event) => scrollTo(event, 'times')}
-                  >
-                    TIME
-                  </a>
-                </li>
-                <li className="nav-item">
-                  <a
-                    className="c-pointer"
-                    href="#scroll"
-                    onClick={(event) => scrollTo(event, 'themes')}
-                  >
-                    WALLET
-                  </a>
-                </li>
-                <li className="nav-item pl-4">
-                  <a
-                    className="btn btn-outline-semi-light btn-sm pr-4 pl-4"
-                    rel="noopener noreferrer"
-                    href={loginRoot}
-                  >
-                    LOGIN
-                  </a>
-                </li>
-              </ul>
-              <span
-                className="mobile-menu-button"
-                onClick={(event) => {
-                  setShowMobileMenu(!showMobileMenu);
-                  event.stopPropagation();
-                }}
-              >
-                <i className="simple-icon-menu" />
-              </span>
-            </div>
-          </nav>
-        </Headroom>
-        <div className="content-container" id="home">
-          <div className="section home" ref={refSectionHome}>
-            <div className="container">
-              <div className="row home-row" ref={refRowHome}>
-                <div className="col-12 d-block d-md-none">
-                  <NavLink to="/">
-                    <img
-                      alt="mobile hero"
-                      className="mobile-hero"
-                      src="/assets/img/landing-page/home-hero-mobile.png"
-                    />
-                  </NavLink>
-                </div>
-
-                <div className="col-12 col-xl-4 col-lg-5 col-md-6">
-                  <div className="home-text">
-                    <div className="display-1">
-                      Success usually comes to those who are too busy to be
-                      looking for it
-                    </div>
-                    <p className="white mb-5">
-                      The time I kill is killing me
-                      <br />
-                      <br />
-                      There are two types of people who will tell you that you
-                      cannot make a difference in this world: <br />
-                      those who are afraid to try and those who are afraid you
-                      will succeed
-                      <br />
-                      <br />
-                      Would you like me to give you a formula for success? It's
-                      quite simple, really: Double your rate of failure. You are
-                      thinking of failure as the enemy of success. But it isn't
-                      at all. You can be discouraged by failure or you can learn
-                      from it, so go ahead and make mistakes. Make all you can.
-                      Because remember that's where you will find success <br />
-                      <br />
-                    </p>
-                  </div>
-                </div>
-                <div className="col-12 col-xl-7 offset-xl-1 col-lg-7 col-md-6  d-none d-md-block">
-                  <NavLink to={loginRoot}>
-                    <CountDownTimer />
-                  </NavLink>
-                  <div className="d-flex justify-content-between align-items-center">
-                    <Calendar onChange={onChange} value={today} />
-                    <Clock value={today} className="clockSize" />
-                  </div>
-                </div>
-              </div>
-
-              <div className="row">
-                <div className="col-12 p-0">
-                  <div className="home-carousel">
-                    <GlideComponent settings={slideSettings}>
-                      {slideItems.map((f, index) => (
-                        <div key={`slide_${index}`} className="card">
-                          <div className="card-body text-center">
-                            <div>
-                              <i className={`${f.icon} large-icon`} />
-                              <h5 className="mb-3 font-weight-semibold">
-                                {f.title}
-                              </h5>
-                            </div>
-                            <div>
-                              <p className="detail-text">{f.detail}</p>
-                            </div>
-                          </div>
-                        </div>
-                      ))}
-                    </GlideComponent>
-                  </div>
-                </div>
-              </div>
-
-              <div className="row">
-                <a
-                  className="btn btn-circle btn-outline-semi-light hero-circle-button"
-                  href="#scroll"
-                  onClick={(event) => scrollTo(event, 'accounts')}
-                >
-                  <i className="simple-icon-arrow-down" />
-                </a>
-              </div>
-            </div>
-          </div>
-
-          <div className="section">
-            <div className="container" id="accounts">
-              <div className="row">
-                <div className="col-12 offset-0 col-lg-8 offset-lg-2 text-center">
-                  <h1>Account Management</h1>
-                  <p>
-                    Account Management is consist of Freelancer Account & Client
-                    Account & Recruiter Account creation and maintenance
-                  </p>
-                  {accounts.map((account, index) => (
-                    <p key={index}>{account.detail}</p>
-                  ))}
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div className="section background">
-            <div className="container" id="projects">
-              <div className="row">
-                <div className="col-12 offset-0 col-lg-8 offset-lg-2 text-center">
-                  <h1>Projects Management</h1>
-                  <p>Project Bid &amp; Project Completion</p>
-                  <br />
-                  <div>
-                    {projects.map((project, index) => (
-                      <p key={index}>{project.detail}</p>
-                    ))}
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div className="section mb-0">
-            <div className="container" id="clients">
-              <div className="row mb-5">
-                <div className="col-12 offset-0 col-lg-8 offset-lg-2 text-center">
-                  <h1>Clients Management</h1>
-                  <p>
-                    Management of Clients for Account and Project
-                    <br />
-                    <br />
-                  </p>
-                  {clients.map((client, index) => (
-                    <p key={index}>{client.detail}</p>
-                  ))}
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div className="section background">
-            <div className="container" id="times">
-              <div className="row">
-                <div className="col-12 offset-0 col-lg-8 offset-lg-2 text-center mb-4">
-                  <h1>Time Management</h1>
-                  {times.map((time, index) => (
-                    <p key={index}>{time.detail}</p>
-                  ))}
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div className="section mb-0">
-            <div className="container" id="themes">
-              <div className="row mb-5">
-                <div className="col-12 offset-0 col-lg-8 offset-lg-2 text-center">
-                  <h1>Wallet</h1>
-                  <p>Wallet Management</p>
-                  {wallets.map((wallet, index) => (
-                    <p key={index}>{wallet.detail}</p>
-                  ))}
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div className="section background background-no-bottom mb-0 pb-0">
-            <div className="container">
-              <div className="row">
-                <div className="col-12 offset-0 col-lg-8 offset-lg-2 text-center">
-                  <h1>
-                    You only live once, but if you do it right, once is enough
-                  </h1>
-                  <p>
-                    Many of life’s failures are people who did not realize how
-                    close they were to success when they gave up
-                  </p>
-                </div>
-                <div className="col-12 offset-0 col-lg-6 offset-lg-3 newsletter-input-container">
-                  <div className="text-center mb-3">
-                    <a
-                      className="btn btn-secondary btn-xl"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      href={buyUrl}
-                    >
-                      Start Your Day
-                    </a>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div className="section footer mb-0" ref={refSectionFooter}>
-            <div className="container">
-              <div className="row footer-row">
-                <div className="col-12 text-right">
-                  <a
-                    className="btn btn-circle btn-outline-semi-light footer-circle-button c-pointer"
-                    href="#scroll"
-                    onClick={(event) => scrollTo(event, 'home')}
-                  >
-                    <i className="simple-icon-arrow-up" />
-                  </a>
-                </div>
-                <div className="col-12 text-center footer-content">
-                  <a
-                    className="c-pointer"
-                    href="#scroll"
-                    onClick={(event) => scrollTo(event, 'home')}
-                  >
-                    <img
-                      className="footer-logo"
-                      alt="footer logo"
-                      src="/assets/logos/white-full.svg"
-                    />
-                  </a>
-                </div>
-              </div>
-            </div>
-            <div className="container copyright pt-5 pb-5">
-              <div className="row">
-                <div className="col-12" />
-                <div className="col-12 text-center">
-                  <p className="mb-0">2020.09.16 © CrmOnlineGems</p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
+    <div>
+      <Card>
+        <CardHeader>Header</CardHeader>
+        <CardBody>
+          <CardTitle tag="h5">Special Title Treatment</CardTitle>
+          <CardText>
+            With supporting text below as a natural lead-in to additional
+            content.
+          </CardText>
+          <Button>Go somewhere</Button>
+        </CardBody>
+        <CardFooter>Footer</CardFooter>
+      </Card>
     </div>
   );
 };

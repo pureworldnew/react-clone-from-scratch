@@ -3,7 +3,8 @@ import { Row, Card, CardTitle, Button } from 'reactstrap';
 import { NavLink } from 'react-router-dom';
 import { Colxx } from '../components/common/CustomBootstrap';
 import IntlMessages from '../helpers/IntlMessages';
-import {adminRoot} from '../constants/defaultValues'
+import { adminRoot } from '../constants/defaultValues';
+
 const Error = () => {
   useEffect(() => {
     document.body.classList.add('background');

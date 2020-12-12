@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import FpsTopnav from '../containers/navs/FpsTopnav';
+import Topnav from '../containers/navs/Topnav';
 
 const UserLayout = ({ children }) => {
   useEffect(() => {
@@ -14,7 +14,7 @@ const UserLayout = ({ children }) => {
   return (
     <>
       <div className="fixed-background" />
-      <FpsTopnav />
+      <Topnav />
       <main>
         <div className="container">{children}</div>
       </main>

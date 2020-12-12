@@ -20,15 +20,7 @@ import {
   changeLocale,
 } from '../../redux/actions';
 
-import {
-  searchPath,
-  isDarkSwitchActive,
-  adminRoot,
-} from '../../constants/defaultValues';
-
-import { MobileMenuIcon, MenuIcon } from '../../components/svg';
-import TopnavEasyAccess from './Topnav.EasyAccess';
-import TopnavDarkSwitch from './Topnav.DarkSwitch';
+import { searchPath, adminRoot } from '../../constants/defaultValues';
 
 const TopNav = ({
   history,
@@ -152,7 +144,7 @@ const TopNav = ({
             menuButtonClick(e, menuClickCount, containerClassnames)
           }
         >
-          <MenuIcon />
+          <div>menu</div>
         </NavLink>
         <NavLink
           to="#"
@@ -160,7 +152,7 @@ const TopNav = ({
           className="menu-button-mobile d-xs-block d-sm-block d-md-none"
           onClick={(e) => mobileMenuButtonClick(e, containerClassnames)}
         >
-          <MobileMenuIcon />
+          mobile
         </NavLink>
       </div>
       <NavLink className="navbar-logo" to={adminRoot}>
@@ -169,9 +161,7 @@ const TopNav = ({
       </NavLink>
 
       <div className="navbar-right">
-        {isDarkSwitchActive && <TopnavDarkSwitch />}
         <div className="header-icons d-inline-block align-middle">
-          <TopnavEasyAccess />
           <button
             className="header-icon btn btn-empty d-none d-sm-inline-block"
             type="button"

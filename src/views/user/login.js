@@ -15,10 +15,8 @@ import { NavLink } from 'react-router-dom';
 import { connect } from 'react-redux';
 
 import { Formik, Form, Field } from 'formik';
-import { NotificationManager } from '../../components/common/react-notifications';
 
 import { loginUser } from '../../redux/actions';
-import { Colxx } from '../../components/common/CustomBootstrap';
 import IntlMessages from '../../helpers/IntlMessages';
 
 const validatePassword = (value) => {
@@ -50,7 +48,7 @@ const Login = ({ history, loading, error, loginUserAction }) => {
 
   useEffect(() => {
     if (error) {
-      NotificationManager.warning(error, 'Login Error', 3000, null, null, '');
+      alert('errror');
     }
   }, [error]);
 
@@ -82,166 +80,7 @@ const Login = ({ history, loading, error, loginUserAction }) => {
 
   const initialValues = { email, password };
 
-  return (
-    <Row className="h-100">
-      <Colxx xxs="12" md="10" className="mx-auto">
-        <Card className="auth-card">
-          <CardTitle className="mb-4 login-title">
-            <IntlMessages id="user.login-title" />
-          </CardTitle>
-
-          <Formik initialValues={initialValues} onSubmit={onUserLogin}>
-            {({ errors, touched }) => (
-              <Form className="av-tooltip tooltip-label-bottom">
-                <FormGroup className="form-group has-float-label">
-                  <Field
-                    name="email"
-                    validate={validateEmail}
-                    className="form-control "
-                  >
-                    {({
-                      field, // { name, value, onChange, onBlur }
-                      form: { touched, errors }, // also values, setXXXX, handleXXXX, dirty, isValid, status, etc.
-                      meta,
-                    }) => (
-                      <div>
-                        <InputGroup>
-                          <InputGroupAddon addonType="prepend">
-                            <InputGroupText className="email-input-icon">
-                              {inputFocus ? (
-                                <img
-                                  src="/assets/logos/focus-email-icon.svg"
-                                  alt=""
-                                />
-                              ) : (
-                                <img
-                                  src="/assets/logos/default-email-icon.svg"
-                                  alt=""
-                                />
-                              )}
-                            </InputGroupText>
-                          </InputGroupAddon>
-                          <Input
-                            type="text"
-                            placeholder="Email Address"
-                            {...field}
-                            className={`email-input ${
-                              inputFocus ? 'text-white' : ''
-                            }`}
-                            autoComplete="none"
-                            onFocus={handleInputFocus}
-                            onBlur={handleInputBlur}
-                          />
-                          {errors.email && touched.email && (
-                            <div className="invalid-feedback d-block">
-                              {errors.email}
-                            </div>
-                          )}
-                        </InputGroup>
-                      </div>
-                    )}
-                  </Field>
-                </FormGroup>
-                <FormGroup
-                  className={`form-group has-float-label ${
-                    status === 'proceed' ? 'd-none' : ''
-                  }`}
-                >
-                  <Field
-                    className="form-control"
-                    type="password"
-                    name="password"
-                    validate={validatePassword}
-                  >
-                    {({
-                      field, // { name, value, onChange, onBlur }
-                      form: { touched, errors }, // also values, setXXXX, handleXXXX, dirty, isValid, status, etc.
-                      meta,
-                    }) => (
-                      <div>
-                        <InputGroup>
-                          <InputGroupAddon addonType="prepend">
-                            <InputGroupText className="email-input-icon">
-                              <img src="/assets/logos/lock-icon.svg" alt="" />
-                            </InputGroupText>
-                          </InputGroupAddon>
-                          <Input
-                            type="password"
-                            placeholder="Password"
-                            {...field}
-                            className={`email-input ${
-                              inputFocus ? 'text-white' : ''
-                            }`}
-                            onFocus={handleInputFocus}
-                            onBlur={handleInputBlur}
-                          />
-                          {errors.password && touched.password && (
-                            <div className="invalid-feedback d-block">
-                              {errors.password}
-                            </div>
-                          )}
-                        </InputGroup>
-                      </div>
-                    )}
-                  </Field>
-                </FormGroup>
-                <div className="d-flex justify-content-between align-items-center">
-                  <NavLink
-                    to="/user/forgot-password"
-                    className="forgot-password"
-                  >
-                    <IntlMessages id="user.forgot-password-question" />
-                  </NavLink>
-                  {status === 'proceed' ? (
-                    <Button
-                      className={`proceed-btn ${
-                        inputFocus ||
-                        (!errors.password && !touched.password && touched)
-                          ? 'proceed-shadow'
-                          : ''
-                      }`}
-                      onClick={!touched.email && !errors.email && buttonClick}
-                    >
-                      <span className="spinner d-inline-block">
-                        <span className="bounce1" />
-                        <span className="bounce2" />
-                        <span className="bounce3" />
-                      </span>
-                      <span className="label">
-                        <IntlMessages id="user.login-proceed" />
-                      </span>
-                    </Button>
-                  ) : (
-                    <Button
-                      className={`proceed-btn ${
-                        inputFocus ? 'proceed-shadow' : ''
-                      }`}
-                    >
-                      <span className="spinner d-inline-block">
-                        <span className="bounce1" />
-                        <span className="bounce2" />
-                        <span className="bounce3" />
-                      </span>
-                      <span className="label">
-                        <IntlMessages id="user.login-button" />
-                      </span>
-                    </Button>
-                  )}
-                </div>
-              </Form>
-            )}
-          </Formik>
-        </Card>
-
-        <div className="singup-now-free d-flex justify-content-center">
-          <div>Don’t have an account? &nbsp;</div>
-          <NavLink to="/user/register" className="singup-now">
-            <IntlMessages id="user.signup-now-free" />
-          </NavLink>
-        </div>
-      </Colxx>
-    </Row>
-  );
+  return <Row className="h-100">login</Row>;
 };
 const mapStateToProps = ({ authUser }) => {
   const { loading, error } = authUser;

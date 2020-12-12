@@ -18,7 +18,7 @@ import {
   SET_STEP4_ITEM,
   SET_STEP5_ITEM,
   SET_STEP6_ITEM,
-  SET_STEP7_ITEM
+  SET_STEP7_ITEM,
 } from '../actions';
 
 export const loginUser = (user, history) => ({
