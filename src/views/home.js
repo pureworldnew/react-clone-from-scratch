@@ -60,9 +60,9 @@ const Home = () => {
   );
 
   return (
-    <div>
+    <header className="header">
       <Topnav />
-    </div>
+    </header>
   );
 };
 

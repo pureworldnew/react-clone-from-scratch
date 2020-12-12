@@ -3,15 +3,22 @@
 /* eslint-disable no-use-before-define */
 import React, { useState } from 'react';
 import { injectIntl } from 'react-intl';
-
 import {
+  Collapse,
+  Navbar,
+  NavbarToggler,
+  NavbarBrand,
+  Nav,
+  NavItem,
+  NavLink,
   UncontrolledDropdown,
-  DropdownItem,
   DropdownToggle,
   DropdownMenu,
+  DropdownItem,
+  Button,
 } from 'reactstrap';
 
-import { NavLink } from 'react-router-dom';
+// import { NavLink } from 'react-router-dom';
 import { connect } from 'react-redux';
 
 import {
@@ -30,23 +37,16 @@ const TopNav = ({
   setContainerClassnamesAction,
   clickOnMobileMenuAction,
 }) => {
+  const [isOpen, setIsOpen] = useState(false);
+
+  const toggle = () => setIsOpen(!isOpen);
+
   const [isInFullScreen, setIsInFullScreen] = useState(false);
   const [searchKeyword, setSearchKeyword] = useState('');
 
   const search = () => {
     history.push(`${searchPath}?key=${searchKeyword}`);
     setSearchKeyword('');
-  };
-
-  const isInFullScreenFn = () => {
-    return (
-      (document.fullscreenElement && document.fullscreenElement !== null) ||
-      (document.webkitFullscreenElement &&
-        document.webkitFullscreenElement !== null) ||
-      (document.mozFullScreenElement &&
-        document.mozFullScreenElement !== null) ||
-      (document.msFullscreenElement && document.msFullscreenElement !== null)
-    );
   };
 
   const handleDocumentClickSearch = (e) => {
@@ -81,32 +81,6 @@ const TopNav = ({
     document.removeEventListener('click', handleDocumentClickSearch, true);
   };
 
-  const toggleFullScreen = () => {
-    const isFS = isInFullScreenFn();
-
-    const docElm = document.documentElement;
-    if (!isFS) {
-      if (docElm.requestFullscreen) {
-        docElm.requestFullscreen();
-      } else if (docElm.mozRequestFullScreen) {
-        docElm.mozRequestFullScreen();
-      } else if (docElm.webkitRequestFullScreen) {
-        docElm.webkitRequestFullScreen();
-      } else if (docElm.msRequestFullscreen) {
-        docElm.msRequestFullscreen();
-      }
-    } else if (document.exitFullscreen) {
-      document.exitFullscreen();
-    } else if (document.webkitExitFullscreen) {
-      document.webkitExitFullscreen();
-    } else if (document.mozCancelFullScreen) {
-      document.mozCancelFullScreen();
-    } else if (document.msExitFullscreen) {
-      document.msExitFullscreen();
-    }
-    setIsInFullScreen(!isFS);
-  };
-
   const handleLogout = () => {
     console.log('logout');
     localStorage.removeItem('gogo_current_user');
@@ -134,69 +108,65 @@ const TopNav = ({
   };
 
   return (
-    <nav className="navbar fixed-top">
-      <div className="d-flex align-items-center navbar-left">
-        <NavLink
-          to="#"
-          location={{}}
-          className="menu-button d-none d-md-block"
-          onClick={(e) =>
-            menuButtonClick(e, menuClickCount, containerClassnames)
-          }
+    <Navbar light expand="lg">
+      <div className="container-fluid">
+        <NavbarBrand
+          href="/"
+          className="col-sm-3 desktop_logo d-none d-lg-block "
         >
+          {' '}
           <img alt="Logo" src="/assets/images/logo.png" />
-        </NavLink>
-        <NavLink
-          to="#"
-          location={{}}
-          className="menu-button-mobile d-xs-block d-sm-block d-md-none"
-          onClick={(e) => mobileMenuButtonClick(e, containerClassnames)}
+        </NavbarBrand>
+        <NavbarToggler onClick={toggle} className="w-100 text-right" />
+        <Collapse
+          isOpen={isOpen}
+          navbar
+          className="col-sm-6 justify-content-center mobile-dropdown"
         >
-          mobile
-        </NavLink>
-      </div>
-      <NavLink className="navbar-logo" to={adminRoot}>
-        <span className="logo d-none d-xs-block" />
-        <span className="logo-mobile d-block d-xs-none" />
-      </NavLink>
-
-      <div className="navbar-right">
-        <div className="header-icons d-inline-block align-middle">
-          <button
-            className="header-icon btn btn-empty d-none d-sm-inline-block"
-            type="button"
-            id="fullScreenButton"
-            onClick={toggleFullScreen}
-          >
-            {isInFullScreen ? (
-              <i className="simple-icon-size-actual d-block" />
-            ) : (
-              <i className="simple-icon-size-fullscreen d-block" />
-            )}
-          </button>
+          <Nav className="mr-auto" navbar>
+            <NavItem>
+              <NavLink href="/components/">Components</NavLink>
+            </NavItem>
+            <NavItem>
+              <NavLink href="/components/">Components</NavLink>
+            </NavItem>
+            <NavItem>
+              <NavLink href="/components/">Components</NavLink>
+            </NavItem>
+            <NavItem>
+              <NavLink href="/components/">Components</NavLink>
+            </NavItem>
+            <NavItem>
+              <NavLink href="/components/">Components</NavLink>
+            </NavItem>
+            <NavItem>
+              <NavLink href="/components/">Components</NavLink>
+            </NavItem>
+          </Nav>
+        </Collapse>
+        <div className="col-sm-3 header_account justify-content-md-center d-lg-flex mw-100">
+          <ul>
+            <li className="mobile_logo d-lg-none">
+              <a className="navbar-brand" href="/">
+                <img src="/assets/images/logo.png" alt="mobile logo" />
+              </a>
+            </li>
+            <li className="signin">
+              <a href="/components">
+                <img src="/assets/images/sign_in_icon.png" alt="signin" />
+                signin
+              </a>
+            </li>
+            <li className="signup">
+              <a href="/components">
+                <img src="/assets/images/sign_up_icon.png" alt="signup" />
+                signup
+              </a>
+            </li>
+          </ul>
         </div>
-        <div className="user d-inline-block">
-          <UncontrolledDropdown className="dropdown-menu-right">
-            <DropdownToggle className="p-0" color="empty">
-              <span className="name mr-1">Sarah Kortney</span>
-              <span>
-                <img alt="Profile" src="/assets/img/profiles/l-1.jpg" />
-              </span>
-            </DropdownToggle>
-            <DropdownMenu className="mt-3" right>
-              <DropdownItem>Account</DropdownItem>
-              <DropdownItem>Features</DropdownItem>
-              <DropdownItem>History</DropdownItem>
-              <DropdownItem>Support</DropdownItem>
-              <DropdownItem divider />
-              <DropdownItem onClick={() => handleLogout()}>
-                Sign out
-              </DropdownItem>
-            </DropdownMenu>
-          </UncontrolledDropdown>
-        </div>
       </div>
-    </nav>
+    </Navbar>
   );
 };
 
