@@ -1,4 +1,4 @@
-/* FPS Main Style 
+/* CFN Main Style 
 
 Table of Contents
 
@@ -53,48 +53,18 @@ html {
   background: $background-color;
 }
 
-:root {
-  --theme-color-1: #{$theme-color-1};
-  --theme-color-2: #{$theme-color-2};
-  --theme-color-3: #{$theme-color-3};
-  --theme-color-4: #{$theme-color-4};
-  --theme-color-5: #{$theme-color-5};
-  --theme-color-6: #{$theme-color-6};
-  --theme-color-1-10: #{rgba($theme-color-1, 0.1)};
-  --theme-color-2-10: #{rgba($theme-color-2, 0.1)};
-  --theme-color-3-10: #{rgba($theme-color-3, 0.1)};
-  --theme-color-4-10: #{rgba($theme-color-4, 0.1)};
-  --theme-color-5-10: #{rgba($theme-color-5, 0.1)};
-  --theme-color-6-10: #{rgba($theme-color-6, 0.1)};
-
-  --primary-color: #{$primary-color};
-  --foreground-color: #{$foreground-color};
-  --separator-color: #{$separator-color};
-}
-
 #root {
   height: 100%;
 }
 
 body {
-  font-family: 'Montserrat', sans-serif;
-  font-size: 0.8rem;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 1rem;
   font-weight: 400;
+  line-height: 1.5;
+  color: #212529;
   color: $primary-color;
-  background: $background-color;
-
-  &.background {
-    height: 100%;
-
-    main {
-      margin: 0 !important;
-      height: 100%;
-
-      .container {
-        height: 100%;
-      }
-    }
-  }
+  background: #fff;
 }
 
 .fixed-background {
@@ -121,3 +91,33 @@ h1 {
   }
 }
 
+//03:navbar
+.navbar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  float: left;
+  width: 100%;
+  padding: 10px 0;
+  z-index: 9;
+}
+.navbar-right {
+  flex-basis: 40%;
+  text-align: right;
+
+  .user {
+    margin-right: $main-margin;
+
+    @include respond-below(xl) {
+      margin-right: $main-margin-lg;
+    }
+
+    @include respond-below(lg) {
+      margin-right: $main-margin-md;
+    }
+
+    @include respond-below(sm) {
+      margin-right: $main-margin-xs;
+    }
+  }
+}

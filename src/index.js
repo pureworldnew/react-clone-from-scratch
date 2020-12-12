@@ -18,7 +18,7 @@ const color =
 setCurrentColor(color);
 
 const render = () => {
-  import(`./assets/css/sass/themes/fps.scss`).then(() => {
+  import(`./assets/css/sass/themes/cfn.scss`).then(() => {
     require('./AppRenderer');
   });
 };

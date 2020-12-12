@@ -144,7 +144,7 @@ const TopNav = ({
             menuButtonClick(e, menuClickCount, containerClassnames)
           }
         >
-          <div>menu</div>
+          <img alt="Logo" src="/assets/images/logo.png" />
         </NavLink>
         <NavLink
           to="#"
