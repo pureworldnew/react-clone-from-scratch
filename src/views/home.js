@@ -25,6 +25,8 @@ import { buyUrl, loginRoot } from '../constants/defaultValues';
 import Topnav from '../containers/navs/Topnav';
 import Banner from '../containers/navs/Banner';
 import HomeContent from '../containers/pages/home/HomeContent';
+import RegisterSection from '../components/pages/RegisterSection';
+import Footer from '../containers/navs/Footer';
 
 const slideItems = [
   {
@@ -68,6 +70,8 @@ const Home = () => {
       </header>
       <Banner />
       <HomeContent />
+      <RegisterSection />
+      <Footer />
     </div>
   );
 };

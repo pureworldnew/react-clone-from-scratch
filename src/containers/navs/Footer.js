@@ -1,15 +1,29 @@
 import React from 'react';
-import { Row } from 'reactstrap';
 
 const Footer = () => {
   return (
-    <footer className="page-footer">
-      <div className="footer-content">
-        <div className="container-fluid">
-          <Row>sddd</Row>
+    <>
+      <h1 className="text-center">free clean fill dirt</h1>
+      <footer className="footer-main">
+        <div className="footer-content">
+          <div className="col-sm-12 footer_copyright text-center">
+            <ul>
+              <li>
+                ©2020 <a href="https://www.cleanfill.net/">Cleanfill.net</a>
+              </li>
+              <li>
+                <a href="https://www.cleanfill.net/terms_of_use">
+                  Terms of Use
+                </a>
+              </li>
+              <li>
+                <a href="https://www.cleanfill.net/sitemap">Sitemap</a>
+              </li>
+            </ul>
+          </div>
         </div>
-      </div>
-    </footer>
+      </footer>
+    </>
   );
 };
 
