@@ -7,17 +7,23 @@ import {
 } from 'reactstrap';
 
 const Banner = ({}) => {
-  const [dropdownOpen, setDropdownOpen] = useState(false);
+  const [dropdownNeedOpen, setDropdownOpen] = useState(false);
+  const [dropdownHaveOpen, setDropdownHaveOpen] = useState(false);
 
-  const toggle = () => setDropdownOpen((prevState) => !prevState);
+  const toggleNeed = () => setDropdownOpen((prevState) => !prevState);
+  const toggleHave = () => setDropdownHaveOpen((prevState) => !prevState);
   return (
     <section className="section-content banner-section">
       <div className="main_banner_text">
         <div className="container">
           <ul className="nav nav-pills mb-3 justify-content-md-center">
             <li className="nav-item">
-              <Dropdown isOpen={dropdownOpen} toggle={toggle}>
-                <DropdownToggle caret>Dropdown</DropdownToggle>
+              <Dropdown
+                isOpen={dropdownNeedOpen}
+                toggle={toggleNeed}
+                className="need-dropdown"
+              >
+                <DropdownToggle caret>Need Fill</DropdownToggle>
                 <DropdownMenu>
                   <DropdownItem header>Header</DropdownItem>
                   <DropdownItem>Some Action</DropdownItem>
@@ -31,8 +37,12 @@ const Banner = ({}) => {
               </Dropdown>
             </li>
             <li className="nav-item">
-              <Dropdown isOpen={dropdownOpen} toggle={toggle}>
-                <DropdownToggle caret>Dropdown</DropdownToggle>
+              <Dropdown
+                isOpen={dropdownHaveOpen}
+                toggle={toggleHave}
+                className="have-dropdown"
+              >
+                <DropdownToggle caret>Have Fill</DropdownToggle>
                 <DropdownMenu>
                   <DropdownItem header>Header</DropdownItem>
                   <DropdownItem>Some Action</DropdownItem>

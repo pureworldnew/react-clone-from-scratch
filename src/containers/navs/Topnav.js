@@ -11,11 +11,6 @@ import {
   Nav,
   NavItem,
   NavLink,
-  UncontrolledDropdown,
-  DropdownToggle,
-  DropdownMenu,
-  DropdownItem,
-  Button,
 } from 'reactstrap';
 
 // import { NavLink } from 'react-router-dom';
@@ -41,7 +36,6 @@ const TopNav = ({
 
   const toggle = () => setIsOpen(!isOpen);
 
-  const [isInFullScreen, setIsInFullScreen] = useState(false);
   const [searchKeyword, setSearchKeyword] = useState('');
 
   const search = () => {
@@ -124,23 +118,23 @@ const TopNav = ({
           className="col-sm-6 justify-content-center mobile-dropdown"
         >
           <Nav className="mr-auto" navbar>
-            <NavItem>
-              <NavLink href="/components/">Components</NavLink>
+            <NavItem className="active">
+              <NavLink href="/components/">Home</NavLink>
             </NavItem>
             <NavItem>
-              <NavLink href="/components/">Components</NavLink>
+              <NavLink href="/components/">About</NavLink>
             </NavItem>
             <NavItem>
-              <NavLink href="/components/">Components</NavLink>
+              <NavLink href="/components/">Contractor</NavLink>
             </NavItem>
             <NavItem>
-              <NavLink href="/components/">Components</NavLink>
+              <NavLink href="/components/">Fill Calculator</NavLink>
             </NavItem>
             <NavItem>
-              <NavLink href="/components/">Components</NavLink>
+              <NavLink href="/components/">FAQ</NavLink>
             </NavItem>
             <NavItem>
-              <NavLink href="/components/">Components</NavLink>
+              <NavLink href="/components/">Contact us</NavLink>
             </NavItem>
           </Nav>
         </Collapse>

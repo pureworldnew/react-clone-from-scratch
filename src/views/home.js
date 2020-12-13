@@ -65,7 +65,7 @@ const Home = () => {
 
   return (
     <div>
-      <header className="header">
+      <header className="header-main">
         <Topnav />
       </header>
       <Banner />
