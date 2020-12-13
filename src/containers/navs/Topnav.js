@@ -120,22 +120,22 @@ const TopNav = ({
           >
             <Nav className="mr-auto" navbar>
               <NavItem className="active">
-                <NavLink href="/components/">Home</NavLink>
+                <NavLink href="/">Home</NavLink>
               </NavItem>
               <NavItem>
-                <NavLink href="/components/">About</NavLink>
+                <NavLink href="/about">About</NavLink>
               </NavItem>
               <NavItem>
-                <NavLink href="/components/">Contractor</NavLink>
+                <NavLink href="/contractor">Contractor</NavLink>
               </NavItem>
               <NavItem>
-                <NavLink href="/components/">Fill Calculator</NavLink>
+                <NavLink href="/calculator">Fill Calculator</NavLink>
               </NavItem>
               <NavItem>
-                <NavLink href="/components/">FAQ</NavLink>
+                <NavLink href="/faq">FAQ</NavLink>
               </NavItem>
               <NavItem>
-                <NavLink href="/components/">Contact us</NavLink>
+                <NavLink href="/contact">Contact us</NavLink>
               </NavItem>
             </Nav>
           </Collapse>

@@ -139,6 +139,9 @@ body {
     }
   }
 }
+.banner-section-min {
+  min-height: 410px;
+}
 .main_banner_text {
   position: absolute;
   bottom: 0;
@@ -176,6 +179,10 @@ body {
     box-shadow: 5px 5px 10px 0px #808080;
     border: none;
   }
+}
+
+.banner-section-min .main_banner_text {
+  padding: 0 0px 50px;
 }
 
 @media (min-width: 1200px) {

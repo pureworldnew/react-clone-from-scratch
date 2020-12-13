@@ -1,6 +1,8 @@
 import React, { useEffect } from 'react';
 import Topnav from '../containers/navs/Topnav';
 import Banner from '../containers/navs/Banner';
+import Footer from '../containers/navs/Footer';
+import RegisterSection from '../components/pages/RegisterSection';
 const UserLayout = ({ children }) => {
   useEffect(() => {
     document.body.classList.add('background');
@@ -13,12 +15,13 @@ const UserLayout = ({ children }) => {
 
   return (
     <>
-      <div className="fixed-background" />
       <Topnav />
       <Banner />
       <main>
         <div className="container">{children}</div>
       </main>
+      <RegisterSection />
+      <Footer />
     </>
   );
 };

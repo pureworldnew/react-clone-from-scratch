@@ -89,7 +89,14 @@ class App extends React.Component {
                     render={(props) => <ViewError {...props} />}
                   />
                   <Route
-                    path="/"
+                    path={[
+                      '/',
+                      '/about',
+                      '/contractor',
+                      '/calculator',
+                      '/faq',
+                      '/contact',
+                    ]}
                     exact
                     render={(props) => <ViewHome {...props} />}
                   />
