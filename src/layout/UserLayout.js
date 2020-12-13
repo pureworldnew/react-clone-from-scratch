@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import Topnav from '../containers/navs/Topnav';
-
+import Banner from '../containers/navs/Banner';
 const UserLayout = ({ children }) => {
   useEffect(() => {
     document.body.classList.add('background');
@@ -15,6 +15,7 @@ const UserLayout = ({ children }) => {
     <>
       <div className="fixed-background" />
       <Topnav />
+      <Banner />
       <main>
         <div className="container">{children}</div>
       </main>
