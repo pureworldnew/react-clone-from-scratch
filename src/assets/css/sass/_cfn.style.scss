@@ -9,6 +9,7 @@ Table of Contents
 05:register
 06:footer
 07:aboutContent
+08:contactorContent
 */
 
 /* 01.Base */
@@ -445,8 +446,6 @@ body {
 }
 //07:aboutContent
 .about-content-section {
-  margin-top: 40px;
-  padding-bottom: 80px;
   a {
     color: #d9a300;
   }
@@ -454,5 +453,139 @@ body {
 .about-img {
   img {
     width: 100%;
+  }
+}
+//08:contactorContent
+.mt-40 {
+  margin-top: 40px;
+}
+.pb-80 {
+  padding-bottom: 80px;
+}
+.w-10 {
+  width: 10%;
+}
+.w-15 {
+  width: 15%;
+}
+.w-30 {
+  width: 30%;
+}
+.contractor-content-section {
+  img {
+    width: 23px;
+    margin-bottom: -6px;
+  }
+  .page_listing {
+    float: left;
+    width: 100%;
+    ul {
+      padding: 0;
+      margin: 0;
+      float: left;
+      width: 100%;
+      li {
+        display: inline-block;
+        list-style-type: none;
+        text-align: center;
+        font-size: 14px;
+        color: #fff;
+        font-weight: 600;
+      }
+      li.fill_type {
+        text-align: left;
+        padding-left: 30px;
+      }
+    }
+
+    .container {
+      max-width: 1140px !important;
+      .listing_header {
+        background-image: url(/assets/images/listing_header_bg.png);
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+        padding: 15px 0;
+        margin-bottom: 5px;
+        margin-top: 50px;
+        span {
+          padding-right: 10px;
+          vertical-align: text-bottom;
+        }
+      }
+      .listing_content {
+        background-color: #f8f8f8;
+        padding: 25px 25px 0;
+        margin-bottom: 80px;
+        .list {
+          background-color: #fff;
+          margin-bottom: 25px;
+          padding: 20px 0;
+          box-shadow: 0px 2px 5px 2px #eee;
+          img {
+            border: 0;
+          }
+          &:hover {
+            background-color: #f0f0e0;
+            transition: 0.4s;
+          }
+        }
+
+        li {
+          border-right: 1px solid #cecebf;
+          line-height: 16px;
+          min-height: 32px;
+          vertical-align: middle;
+          color: #212529;
+          font-weight: normal;
+        }
+        li:last-child {
+          border-right: 0;
+        }
+        .list_pagination {
+          text-align: center;
+          margin-bottom: 40px;
+          margin-top: 10px;
+          ul {
+            text-align: center;
+          }
+        }
+      }
+    }
+  }
+  .page_listing_medium ul li:first-child {
+    width: 8%;
+  }
+  .list_pagination ul li a {
+    display: inline-block;
+    width: 28px;
+    height: 25px;
+    border-radius: 4px;
+    line-height: 25px;
+    color: #000;
+    text-decoration: none;
+    background: #1e5799;
+    background: -moz-linear-gradient(
+      top,
+      #1e5799 0%,
+      #edebea 0%,
+      #dcd8d6 100%,
+      #dddad8 100%
+    );
+    background: -webkit-linear-gradient(
+      top,
+      #1e5799 0%,
+      #edebea 0%,
+      #dcd8d6 100%,
+      #dddad8 100%
+    );
+    background: linear-gradient(
+      to bottom,
+      #1e5799 0%,
+      #edebea 0%,
+      #dcd8d6 100%,
+      #dddad8 100%
+    );
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#1e5799', endColorstr='#dddad8',GradientType=0 );
   }
 }

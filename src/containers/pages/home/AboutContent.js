@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 
 const AboutContent = ({}) => {
   return (
-    <section className="about-content-section">
+    <section className="about-content-section mt-40 pb-80">
       <div className="container">
         <div className="row">
           <div className="col-sm-12">
