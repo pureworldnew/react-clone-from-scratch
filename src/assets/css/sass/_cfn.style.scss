@@ -6,6 +6,9 @@ Table of Contents
 01.Base
 03.Navbar
 04:banner
+05:register
+06:footer
+07:aboutContent
 */
 
 /* 01.Base */
@@ -368,6 +371,15 @@ body {
     }
   }
 }
+.dirt_heading {
+  padding-bottom: 20px;
+  h2 {
+    color: #76594c;
+    font-size: 34px !important;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: bolder;
+  }
+}
 //05:register
 .registration_block {
   background-image: url(/assets/images/bottom_bg.jpg);
@@ -430,4 +442,17 @@ body {
 .footer_copyright li {
   padding: 0 10px;
   display: inline-block;
+}
+//07:aboutContent
+.about-content-section {
+  margin-top: 40px;
+  padding-bottom: 80px;
+  a {
+    color: #d9a300;
+  }
+}
+.about-img {
+  img {
+    width: 100%;
+  }
 }
