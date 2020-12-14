@@ -13,12 +13,6 @@ import {
   RESET_PASSWORD_SUCCESS,
   RESET_PASSWORD_ERROR,
   REGISTER_USER_WITH_INFO,
-  SET_STEP,
-  SET_STEP3_ITEM,
-  SET_STEP4_ITEM,
-  SET_STEP5_ITEM,
-  SET_STEP6_ITEM,
-  SET_STEP7_ITEM,
 } from '../actions';
 
 export const loginUser = (user, history) => ({
@@ -76,36 +70,6 @@ export const registerUserError = (message) => ({
 export const logoutUser = (history) => ({
   type: LOGOUT_USER,
   payload: { history },
-});
-
-export const setStep = (item) => ({
-  type: SET_STEP,
-  payload: { item },
-});
-
-export const setStep3Item = (item) => ({
-  type: SET_STEP3_ITEM,
-  payload: { item },
-});
-
-export const setStep4Item = (item) => ({
-  type: SET_STEP4_ITEM,
-  payload: { item },
-});
-
-export const setStep5Item = (item) => ({
-  type: SET_STEP5_ITEM,
-  payload: { item },
-});
-
-export const setStep6Item = (item) => ({
-  type: SET_STEP6_ITEM,
-  payload: { item },
-});
-
-export const setStep7Item = (item) => ({
-  type: SET_STEP7_ITEM,
-  payload: { item },
 });
 
 export const registerUserWithInfo = (user, history) => ({

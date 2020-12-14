@@ -12,6 +12,7 @@ Table of Contents
 08:contactorContent
 09:faqContent
 10:contactContent
+11:loginContent
 */
 
 /* 01.Base */
@@ -688,4 +689,16 @@ body {
   padding: 0px;
   resize: none;
   display: none;
+}
+//11:loginContent
+.login-content-section {
+  a {
+    color: #d9a300;
+  }
+  a:hover {
+    color: #b18500;
+  }
+}
+.pb-10 {
+  padding-bottom: 10px;
 }

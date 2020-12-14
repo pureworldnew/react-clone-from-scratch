@@ -40,47 +40,83 @@ const validateEmail = (value) => {
 };
 
 const Login = ({ history, loading, error, loginUserAction }) => {
-  // const [email] = useState('demo@gogo.com');
-  const [email] = useState('');
-  const [password] = useState('gogo123');
-  const [inputFocus, setInputFocus] = useState(false);
-  const [status, setStatus] = useState('proceed');
-
-  useEffect(() => {
-    if (error) {
-      alert('errror');
-    }
-  }, [error]);
+  const [username, setUsername] = useState('test_username');
+  const [password] = useState('test_password');
 
   const onUserLogin = (values) => {
-    if (status === 'login') {
-      setStatus('done');
-    }
-    if (status === 'done') {
-      if (!loading) {
-        if (values.email !== '' && values.password !== '') {
-          loginUserAction(values, history);
-        }
-      }
-    }
+    loginUserAction();
   };
 
-  const handleInputFocus = () => {
-    setInputFocus(true);
-  };
+  return (
+    <section className="login-content-section mt-40 pb-80">
+      <div className="container">
+        <div className="row">
+          <div className="col-sm-12">
+            <div className="error_ text-left pb-10"></div>
 
-  const handleInputBlur = () => {
-    setInputFocus(false);
-  };
+            <div className="row">
+              <div className="col-sm-3"></div>
+              <div className="col-sm-6">
+                <h4>Use your Clean Fill Network Account</h4>
+                <br />
 
-  const buttonClick = () => {
-    console.log('button click');
-    setStatus('login');
-  };
+                <form
+                  name="lform"
+                  id="lform"
+                  action={() => onUserLogin()}
+                  method="post"
+                  className="form-horizontal"
+                >
+                  <input
+                    name="username"
+                    type="text"
+                    className="form-control"
+                    id="username"
+                    value={username}
+                    maxLength="20"
+                    placeholder="username"
+                    onChange={() => setUsername}
+                  />
+                  <br clear="all" />
+                  <input
+                    name="password"
+                    type="password"
+                    className="form-control"
+                    id="password"
+                    value={password}
+                    maxLength="20"
+                    placeholder="passsword"
+                  />
+                  <br clear="all" />
+                  <input
+                    name="login2"
+                    type="submit"
+                    id="login2"
+                    value="Login"
+                    className="btn btn-lg btn-success"
+                  />
+                  <br clear="all" />
 
-  const initialValues = { email, password };
-
-  return <Row className="h-100">login</Row>;
+                  <p>&nbsp;</p>
+                  <span className="style3">
+                    Not a Member? Please register{' '}
+                    <a href="https://www.cleanfill.net/register">here</a>
+                    <br />
+                    Click{' '}
+                    <a href="https://www.cleanfill.net/forgot_password">
+                      here
+                    </a>{' '}
+                    if you have forgotten your password.
+                  </span>
+                </form>
+              </div>
+              <div className="col-sm-3"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
 };
 const mapStateToProps = ({ authUser }) => {
   const { loading, error } = authUser;

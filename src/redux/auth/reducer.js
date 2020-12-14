@@ -15,13 +15,6 @@ import {
   REGISTER_USER_WITH_INFO,
   REGISTER_USER_WITH_INFO_SUCCESS,
   REGISTER_USER_WITH_INFO_ERROR,
-  SET_STEP,
-  SET_STEP1_ITEM,
-  SET_STEP3_ITEM,
-  SET_STEP4_ITEM,
-  SET_STEP5_ITEM,
-  SET_STEP6_ITEM,
-  SET_STEP7_ITEM,
 } from '../actions';
 import { getCurrentUser } from '../../helpers/Utils';
 
@@ -100,18 +93,6 @@ export default (state = INIT_STATE, action) => {
       };
     case LOGOUT_USER:
       return { ...state, user: null, error: '' };
-    case SET_STEP:
-      return { ...state, step: action.payload.item };
-    case SET_STEP3_ITEM:
-      return { ...state, step3Item: action.payload.item };
-    case SET_STEP4_ITEM:
-      return { ...state, step4Item: action.payload.item };
-    case SET_STEP5_ITEM:
-      return { ...state, step5Item: action.payload.item };
-    case SET_STEP6_ITEM:
-      return { ...state, step6Item: action.payload.item };
-    case SET_STEP7_ITEM:
-      return { ...state, step7Item: action.payload.item };
     case REGISTER_USER_WITH_INFO:
       return { ...state, loading: true };
     case REGISTER_USER_WITH_INFO_SUCCESS:
