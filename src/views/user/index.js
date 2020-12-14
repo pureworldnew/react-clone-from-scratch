@@ -16,9 +16,9 @@ const ResetPassword = React.lazy(() =>
   import(/* webpackChunkName: "user-reset-password" */ './reset-password')
 );
 
-const User = ({ match }) => {
+const User = ({ match, history }) => {
   return (
-    <UserLayout match={match}>
+    <UserLayout match={match} history={history}>
       <Suspense fallback={<div className="loading" />}>
         <Switch>
           <Redirect exact from={`${match.url}/`} to={`${match.url}/login`} />

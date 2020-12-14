@@ -96,6 +96,8 @@ class App extends React.Component {
                       '/calculator',
                       '/faq',
                       '/contact',
+                      '/search/need',
+                      '/search/have',
                     ]}
                     exact
                     render={(props) => <ViewHome {...props} />}

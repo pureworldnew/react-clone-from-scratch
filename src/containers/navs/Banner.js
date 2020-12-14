@@ -6,7 +6,7 @@ import {
   DropdownItem,
 } from 'reactstrap';
 
-const Banner = ({}) => {
+const Banner = ({ history }) => {
   const [dropdownNeedOpen, setDropdownOpen] = useState(false);
   const [dropdownHaveOpen, setDropdownHaveOpen] = useState(false);
 
@@ -25,7 +25,9 @@ const Banner = ({}) => {
               >
                 <DropdownToggle caret>Need Fill</DropdownToggle>
                 <DropdownMenu>
-                  <DropdownItem>Search Need Fill</DropdownItem>
+                  <DropdownItem onClick={() => history.push('/search/need')}>
+                    Search Need Fill
+                  </DropdownItem>
                   <DropdownItem>Post Need Fill</DropdownItem>
                 </DropdownMenu>
               </Dropdown>
@@ -38,7 +40,9 @@ const Banner = ({}) => {
               >
                 <DropdownToggle caret>Have Fill</DropdownToggle>
                 <DropdownMenu>
-                  <DropdownItem>Search Have Fill</DropdownItem>
+                  <DropdownItem onClick={() => history.push('/search/have')}>
+                    Search Have Fill
+                  </DropdownItem>
                   <DropdownItem>Post Have Fill</DropdownItem>
                 </DropdownMenu>
               </Dropdown>

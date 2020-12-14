@@ -18,8 +18,10 @@ import Banner from '../containers/navs/Banner';
 import CalculatorContnet from '../containers/pages/home/CalculatorContent';
 import ContactContent from '../containers/pages/home/ContactContent';
 import Error from './error';
+import SearchNeedContent from '../containers/pages/home/SearchNeedContent';
+import SearchHaveContent from '../containers/pages/home/SearchHaveContent';
 
-const Home = ({ match }) => {
+const Home = ({ match, history }) => {
   console.log(match);
   console.log('props home page is here', match.path);
   const getContent = (route) => {
@@ -36,13 +38,17 @@ const Home = ({ match }) => {
         return <FaqContent />;
       case '/contact':
         return <ContactContent />;
+      case '/search/need':
+        return <SearchNeedContent />;
+      case '/search/have':
+        return <SearchHaveContent />;
       default:
         return <Error />;
     }
   };
   const getBanner = (route) => {
-    if (route === '/') return <HomeBanner />;
-    return <Banner />;
+    if (route === '/') return <HomeBanner history={history} />;
+    return <Banner history={history} />;
   };
   return (
     <div>

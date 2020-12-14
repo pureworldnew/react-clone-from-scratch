@@ -11,7 +11,7 @@ const AppLayout = ({ children, history, match }) => {
   return (
     <>
       <Topnav history={history} match={match} />
-      <Banner />
+      <Banner history={history} />
       <AppMenu history={history} />
       <main>
         <div className="container">{children}</div>

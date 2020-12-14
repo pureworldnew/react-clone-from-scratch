@@ -8,7 +8,7 @@ const UserLayout = ({ children, history, match }) => {
   return (
     <>
       <Topnav match={match} history={history} />
-      <Banner />
+      <Banner history={history} />
       <main>
         <div className="container">{children}</div>
       </main>
