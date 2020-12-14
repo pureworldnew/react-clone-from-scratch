@@ -23,7 +23,7 @@ const App = ({ match }) => {
             <Redirect
               exact
               from={`${match.url}/`}
-              to={`${match.url}/dashboards`}
+              to={`${match.url}/user-account`}
             />
             <Route
               path={`${match.url}/dashboards`}
@@ -35,6 +35,10 @@ const App = ({ match }) => {
             />
             <Route
               path={`${match.url}/gogo`}
+              render={(props) => <Gogo {...props} />}
+            />
+            <Route
+              path={`${match.url}/user-account`}
               render={(props) => <Gogo {...props} />}
             />
             <Redirect to="/error" />

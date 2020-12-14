@@ -27,24 +27,26 @@ export function* watchLoginUser() {
   yield takeEvery(LOGIN_USER, loginWithEmailPassword);
 }
 
-const loginWithEmailPasswordAsync = async (email, password) =>
-  await auth
-    .signInWithEmailAndPassword(email, password)
-    .then((authUser) => authUser)
-    .catch((error) => error);
+const loginWithEmailPasswordAsync = async (email, password) => {
+  return true;
+};
 
 function* loginWithEmailPassword({ payload }) {
   const { email, password } = payload.user;
   const { history } = payload;
   try {
     const loginUser = yield call(loginWithEmailPasswordAsync, email, password);
-    if (!loginUser.message) {
-      setCurrentUser(loginUser.user);
-      yield put(loginUserSuccess(loginUser.user));
-      history.push(adminRoot);
-    } else {
-      yield put(loginUserError(loginUser.message));
-    }
+    const currentUser = { uid: 'logged_user_id' };
+    setCurrentUser(currentUser);
+    yield put(loginUserSuccess({ uid: 'logged_user_id' }));
+    history.push(adminRoot);
+    // if (!loginUser.message) {
+    //   setCurrentUser(loginUser.user);
+    //   yield put(loginUserSuccess(loginUser.user));
+    //   history.push(adminRoot);
+    // } else {
+    //   yield put(loginUserError(loginUser.message));
+    // }
   } catch (error) {
     yield put(loginUserError(error));
   }

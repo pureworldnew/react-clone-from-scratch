@@ -2,18 +2,21 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
 
-import TopNav from '../containers/navs/Topnav';
+import Topnav from '../containers/navs/Topnav';
+import Banner from '../containers/navs/Banner';
 import Footer from '../containers/navs/Footer';
+import RegisterSection from '../components/pages/RegisterSection';
 
-const AppLayout = ({ containerClassnames, children, history }) => {
+const AppLayout = ({ children, history }) => {
   return (
-    <div id="app-container" className={containerClassnames}>
-      <TopNav history={history} />
+    <>
+      <Topnav history={history} />
+      <Banner />
       <main>
-        <div className="container-fluid">{children}</div>
+        <div className="container">{children}</div>
       </main>
       <Footer />
-    </div>
+    </>
   );
 };
 const mapStateToProps = ({ menu }) => {

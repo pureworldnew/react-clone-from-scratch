@@ -43,8 +43,10 @@ const Login = ({ history, loading, error, loginUserAction }) => {
   const [username, setUsername] = useState('test_username');
   const [password] = useState('test_password');
 
-  const onUserLogin = (values) => {
-    loginUserAction();
+  const onUserLogin = (event) => {
+    event.preventDefault();
+    const values = ['email_test', 'pass_test'];
+    loginUserAction(values, history);
   };
 
   return (
@@ -60,13 +62,7 @@ const Login = ({ history, loading, error, loginUserAction }) => {
                 <h4>Use your Clean Fill Network Account</h4>
                 <br />
 
-                <form
-                  name="lform"
-                  id="lform"
-                  action={() => onUserLogin()}
-                  method="post"
-                  className="form-horizontal"
-                >
+                <form onSubmit={onUserLogin}>
                   <input
                     name="username"
                     type="text"
