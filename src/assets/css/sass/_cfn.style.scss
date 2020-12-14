@@ -590,6 +590,15 @@ body {
   }
 }
 //09:calculatorContent
+.custom_headein_h2 {
+  color: #76594c;
+  font-size: 24px !important;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: bolder;
+  border-bottom: 1px solid #76594c;
+  margin-bottom: 40px;
+  padding-bottom: 12px;
+}
 .calculator-content-section {
   .second-parag {
     font-family: Arial, Helvetica, Geneva, Swiss, SunSans-Regular;
@@ -597,15 +606,6 @@ body {
   .shadow_custom {
     box-shadow: 2px 2px 4px 4px #f8f8f8;
     padding: 40px 50px;
-  }
-  .custom_headein_h2 {
-    color: #76594c;
-    font-size: 24px !important;
-    font-family: 'Open Sans', sans-serif;
-    font-weight: bolder;
-    border-bottom: 1px solid #76594c;
-    margin-bottom: 40px;
-    padding-bottom: 12px;
   }
   .btn-success {
     background-color: #85b200;
