@@ -12,6 +12,10 @@ const AccountHaveFill = React.lazy(() =>
   import(/* webpackChunkName: "AccountHaveFill" */ './accountHaveFill')
 );
 
+const AccountListings = React.lazy(() =>
+  import(/* webpackChunkName: "AccountListings" */ './accountListings')
+);
+
 const AccountManage = ({ match }) => (
   <Suspense fallback={<div className="loading" />}>
     <Switch>
@@ -30,7 +34,7 @@ const AccountManage = ({ match }) => (
       />
       <Route
         path={`${match.url}/listings`}
-        render={(props) => <AccountNeedFill {...props} />}
+        render={(props) => <AccountListings {...props} />}
       />
       <Route
         path={`${match.url}/contactor`}

@@ -873,3 +873,67 @@ body {
 .btn {
   margin-top: 10px;
 }
+//16:accountManageHaveFill
+.w-pc-5 {
+  width: 5%;
+}
+.w-pc-20 {
+  width: 20%;
+}
+.w-pc-15 {
+  width: 15%;
+}
+.w-pc-12 {
+  width: 12%;
+}
+.w-pc-10 {
+  width: 10%;
+}
+.cont_tables {
+  padding-top: 50px;
+}
+.page_listing {
+  float: left;
+  width: 100%;
+}
+.listing_header {
+  background-image: url(/assets/images/listing_header_bg.png);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  padding: 15px 0;
+  margin-bottom: 5px;
+  margin-top: 50px;
+}
+.page_listing ul {
+  padding: 0;
+  margin: 0;
+  float: left;
+  width: 100%;
+}
+.page_listing ul li {
+  display: inline-block;
+  list-style-type: none;
+  text-align: center;
+  font-size: 14px;
+}
+.listing_header li {
+  color: #fff;
+  font-weight: 600;
+}
+.page_listing .container {
+  max-width: 1140px !important;
+}
+.listing_header li span {
+  padding-right: 10px;
+  vertical-align: text-bottom;
+}
+.listing_content {
+  background-color: #f8f8f8;
+  padding: 25px 25px 0;
+  margin-bottom: 80px;
+}
+hr {
+  color: #d9a300;
+  background-color: #d9a300;
+}

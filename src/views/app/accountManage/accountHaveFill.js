@@ -2,17 +2,7 @@ import React, { useState } from 'react';
 
 const AccountHaveFill = () => {
   const [activebtn, setActiveBtn] = useState(false);
-  const [activeNonCompact, setActiveNonCompact] = useState(false);
-  const [activeCompactFill, setActiveCompactFill] = useState(false);
-  const [activeCompactRock, setActiveCompactRock] = useState(false);
-  const [activeTopsoil, setActiveTopsoil] = useState(false);
-  const [activeOther, setActiveOther] = useState(false);
-  const setActiveButton = () => {
-    setActiveBtn(!activebtn);
-  };
-  const setNonCompactFill = () => {
-    setActiveNonCompact(!activeNonCompact);
-  };
+
   return (
     <section className="section-content dirt-section">
       <div className="container">
