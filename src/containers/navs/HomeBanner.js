@@ -25,14 +25,8 @@ const HomeBanner = ({}) => {
               >
                 <DropdownToggle caret>Need Fill</DropdownToggle>
                 <DropdownMenu>
-                  <DropdownItem header>Header</DropdownItem>
-                  <DropdownItem>Some Action</DropdownItem>
-                  <DropdownItem text>Dropdown Item Text</DropdownItem>
-                  <DropdownItem disabled>Action (disabled)</DropdownItem>
-                  <DropdownItem divider />
-                  <DropdownItem>Foo Action</DropdownItem>
-                  <DropdownItem>Bar Action</DropdownItem>
-                  <DropdownItem>Quo Action</DropdownItem>
+                  <DropdownItem>Search Need Fill</DropdownItem>
+                  <DropdownItem>Post Need Fill</DropdownItem>
                 </DropdownMenu>
               </Dropdown>
             </li>
@@ -44,14 +38,8 @@ const HomeBanner = ({}) => {
               >
                 <DropdownToggle caret>Have Fill</DropdownToggle>
                 <DropdownMenu>
-                  <DropdownItem header>Header</DropdownItem>
-                  <DropdownItem>Some Action</DropdownItem>
-                  <DropdownItem text>Dropdown Item Text</DropdownItem>
-                  <DropdownItem disabled>Action (disabled)</DropdownItem>
-                  <DropdownItem divider />
-                  <DropdownItem>Foo Action</DropdownItem>
-                  <DropdownItem>Bar Action</DropdownItem>
-                  <DropdownItem>Quo Action</DropdownItem>
+                  <DropdownItem>Search Have Fill</DropdownItem>
+                  <DropdownItem>Post Have Fill</DropdownItem>
                 </DropdownMenu>
               </Dropdown>
             </li>

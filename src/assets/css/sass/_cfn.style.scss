@@ -159,7 +159,8 @@ body {
   .nav-pills {
     display: flex;
   }
-  .need-dropdown button {
+  .need-dropdown > button,
+  .need-dropdown > button:focus {
     color: #fff;
     background-color: #85b200;
     font-size: 28px;
@@ -172,7 +173,23 @@ body {
     box-shadow: 5px 5px 10px 0px #808080;
     border: none;
   }
-  .have-dropdown button {
+  .need-dropdown div.dropdown-menu {
+    background-color: #85b200;
+  }
+
+  .need-dropdown .dropdown-item {
+    background-color: #85b200;
+    display: block;
+    padding: 3px 20px;
+    clear: both;
+    font-weight: 400;
+    line-height: 1.42857143;
+    color: #ffffff !important;
+    white-space: nowrap;
+    font-size: 18px;
+  }
+  .have-dropdown > button,
+  .have-dropdown > button:focus {
     color: #fff;
     background-color: #d9a300;
     font-size: 28px;
@@ -184,6 +201,21 @@ body {
     -webkit-box-shadow: 5px 5px 10px 0px #808080;
     box-shadow: 5px 5px 10px 0px #808080;
     border: none;
+  }
+  .have-dropdown div.dropdown-menu {
+    background-color: #d9a300;
+  }
+
+  .have-dropdown .dropdown-item {
+    background-color: #d9a300;
+    display: block;
+    padding: 3px 20px;
+    clear: both;
+    font-weight: 400;
+    line-height: 1.42857143;
+    color: #ffffff !important;
+    white-space: nowrap;
+    font-size: 18px;
   }
 }
 
