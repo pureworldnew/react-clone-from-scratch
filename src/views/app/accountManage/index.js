@@ -2,11 +2,16 @@ import React, { Suspense } from 'react';
 import { Redirect, Route, Switch } from 'react-router-dom';
 
 const AccountInfo = React.lazy(() =>
-  import(/* webpackChunkName: "start" */ './accountInfo')
+  import(/* webpackChunkName: "accountInfo" */ './accountInfo')
 );
 const AccountNeedFill = React.lazy(() =>
-  import(/* webpackChunkName: "start" */ './accountNeedFill')
+  import(/* webpackChunkName: "accountNeedFill" */ './accountNeedFill')
 );
+
+const AccountHaveFill = React.lazy(() =>
+  import(/* webpackChunkName: "AccountHaveFill" */ './accountHaveFill')
+);
+
 const AccountManage = ({ match }) => (
   <Suspense fallback={<div className="loading" />}>
     <Switch>
@@ -21,7 +26,7 @@ const AccountManage = ({ match }) => (
       />
       <Route
         path={`${match.url}/havefill`}
-        render={(props) => <AccountNeedFill {...props} />}
+        render={(props) => <AccountHaveFill {...props} />}
       />
       <Route
         path={`${match.url}/listings`}

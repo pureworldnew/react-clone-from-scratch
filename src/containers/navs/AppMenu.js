@@ -19,7 +19,14 @@ const AppMenu = ({ history }) => {
                 }
               >
                 <a href="/app/account/info">
-                  <img src="/assets/icons/a_edit_mini_hover.png" alt="" />
+                  <img
+                    src={
+                      history.location.pathname === '/app/account/info'
+                        ? '/assets/icons/a_edit_mini_hover.png'
+                        : '/assets/icons/a_edit_mini.png'
+                    }
+                    alt=""
+                  />
                   Manage Account Information
                 </a>
               </div>
@@ -31,7 +38,14 @@ const AppMenu = ({ history }) => {
                 }
               >
                 <a href="/app/account/needfill">
-                  <img src="/assets/icons/a_down_mini.png" alt="" />
+                  <img
+                    src={
+                      history.location.pathname === '/app/account/needfill'
+                        ? '/assets/icons/a_down_mini_hover.png'
+                        : '/assets/icons/a_down_mini.png'
+                    }
+                    alt=""
+                  />
                   Manage Listings Need Fill
                 </a>
               </div>
@@ -43,7 +57,14 @@ const AppMenu = ({ history }) => {
                 }
               >
                 <a href="/app/account/havefill">
-                  <img src="/assets/icons/a_up_mini.png" alt="" />
+                  <img
+                    src={
+                      history.location.pathname === '/app/account/havefill'
+                        ? '/assets/icons/a_up_mini_hover.png'
+                        : '/assets/icons/a_up_mini.png'
+                    }
+                    alt=""
+                  />
                   Manage Listings Have Fill
                 </a>
               </div>
@@ -55,7 +76,14 @@ const AppMenu = ({ history }) => {
                 }
               >
                 <a href="/app/account/listings">
-                  <img src="/assets/icons/a_job_mini.png" alt="" />
+                  <img
+                    src={
+                      history.location.pathname === '/app/account/listings'
+                        ? '/assets/icons/a_job_mini_hover.png'
+                        : '/assets/icons/a_job_mini.png'
+                    }
+                    alt=""
+                  />
                   My Listings
                 </a>
               </div>
@@ -67,7 +95,14 @@ const AppMenu = ({ history }) => {
                 }
               >
                 <a href="/app/account/contactor">
-                  <img src="/assets/icons/a_contactor_mini.png" alt="" />
+                  <img
+                    src={
+                      history.location.pathname === '/app/account/contactor'
+                        ? '/assets/icons/a_contactor_mini_hover.png'
+                        : '/assets/icons/a_contactor_mini.png'
+                    }
+                    alt=""
+                  />
                   Manage Listings Contactor
                 </a>
               </div>
@@ -80,7 +115,14 @@ const AppMenu = ({ history }) => {
                 }
               >
                 <a href="/app/account/notifications">
-                  <img src="/assets/icons/a_mail_mini.png" alt="" />
+                  <img
+                    src={
+                      history.location.pathname === '/app/account/notifications'
+                        ? '/assets/icons/a_mail_mini_hover.png'
+                        : '/assets/icons/a_mail_mini.png'
+                    }
+                    alt=""
+                  />
                   Add FREE Email Notifications
                 </a>
               </div>

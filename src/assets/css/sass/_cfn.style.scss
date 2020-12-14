@@ -13,6 +13,7 @@ Table of Contents
 09:faqContent
 10:contactContent
 11:loginContent
+14:manageAccountNeedFill
 */
 
 /* 01.Base */
@@ -794,4 +795,81 @@ body {
   .error_ {
     color: #ff0000;
   }
+}
+//14:manageAccountNeedFill
+.id_filltype_cont {
+  padding: 5px 10px 60px 40px;
+  background-color: #f9efd4;
+  p {
+    font-size: 12px;
+    line-height: 50px;
+  }
+  h4 {
+    font-size: 28px;
+    color: #4c3a33;
+    margin-bottom: 15px;
+    img {
+      margin-right: 15px;
+    }
+  }
+}
+.id_fill1_cont label,
+.id_fill2_cont label,
+.id_fill3_cont label,
+.id_fill4_cont label,
+.id_fill5_cont label,
+.id_btype_cont label {
+  margin-left: 30px;
+}
+.new_style .bot_add {
+  font-size: 12px;
+}
+.new_style .btn {
+  border-radius: 0px;
+  font-size: 24px;
+  font-weight: bold;
+  padding: 15px 65px;
+}
+
+.id_fill1,
+.id_fill2,
+.id_fill3,
+.id_fill4,
+.id_fill5 {
+  cursor: pointer;
+}
+//15:accountManageHaveFill
+.payment_info h2 span {
+  width: 99%;
+  float: left;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 16px;
+  color: #000;
+  font-weight: bold;
+  border-bottom: #c6dbb0 solid 2px;
+  padding: 0 0 14px 4px;
+}
+.payment_info h3.select_step {
+  color: #000;
+  background: url(/assets/images/step_sel.jpg) top center no-repeat;
+}
+.payment_info h3 {
+  font-size: 11px;
+  font-family: 'Trebuchet MS', Arial, Helvetica, sans-serif;
+  color: #666666;
+  float: left;
+  margin: 0 3% 0 4px;
+  padding-top: 14px;
+}
+.payment_info_data {
+  width: 100%;
+  float: left;
+  padding-top: 45px;
+}
+.btn-primary {
+  padding-left: 30px;
+  padding-right: 30px;
+}
+.btn {
+  margin-top: 10px;
 }
