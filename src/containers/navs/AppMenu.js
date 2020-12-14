@@ -1,45 +1,85 @@
 import React, { useState } from 'react';
 
-const AppMenu = () => {
+const AppMenu = ({ history }) => {
+  console.log('history of Applayout');
+
+  const isActive =
+    history.location.pathname === '/app/account/needfill' ? 'active' : '';
   return (
     <section className="app-menu-section-content">
       <div className="container">
         <div className="row">
           <div className="col-sm-12">
             <div className="row row_custom">
-              <div className="col-sm-2 active">
+              <div
+                className={
+                  history.location.pathname === '/app/account/info'
+                    ? 'col-sm-2 active'
+                    : 'col-sm-2'
+                }
+              >
                 <a href="/app/account/info">
                   <img src="/assets/icons/a_edit_mini_hover.png" alt="" />
                   Manage Account Information
                 </a>
               </div>
-              <div className="col-sm-2">
+              <div
+                className={
+                  history.location.pathname === '/app/account/needfill'
+                    ? 'col-sm-2 active'
+                    : 'col-sm-2'
+                }
+              >
                 <a href="/app/account/needfill">
                   <img src="/assets/icons/a_down_mini.png" alt="" />
                   Manage Listings Need Fill
                 </a>
               </div>
-              <div className="col-sm-2">
-                <a href="https://www.cleanfill.net/my_account/listings/have">
+              <div
+                className={
+                  history.location.pathname === '/app/account/havefill'
+                    ? 'col-sm-2 active'
+                    : 'col-sm-2'
+                }
+              >
+                <a href="/app/account/havefill">
                   <img src="/assets/icons/a_up_mini.png" alt="" />
                   Manage Listings Have Fill
                 </a>
               </div>
-              <div className="col-sm-2">
-                <a href="https://www.cleanfill.net/my_account/listings/need_have">
+              <div
+                className={
+                  history.location.pathname === '/app/account/listings'
+                    ? 'col-sm-2 active'
+                    : 'col-sm-2'
+                }
+              >
+                <a href="/app/account/listings">
                   <img src="/assets/icons/a_job_mini.png" alt="" />
                   My Listings
                 </a>
               </div>
-              <div className="col-sm-2 ">
-                <a href="https://www.cleanfill.net/my_account/listings/contactor">
+              <div
+                className={
+                  history.location.pathname === '/app/account/contactor'
+                    ? 'col-sm-2 active'
+                    : 'col-sm-2'
+                }
+              >
+                <a href="/app/account/contactor">
                   <img src="/assets/icons/a_contactor_mini.png" alt="" />
                   Manage Listings Contactor
                 </a>
               </div>
 
-              <div className="col-sm-2">
-                <a href="https://www.cleanfill.net/my_account/email_notification">
+              <div
+                className={
+                  history.location.pathname === '/app/account/notifications'
+                    ? 'col-sm-2 active'
+                    : 'col-sm-2'
+                }
+              >
+                <a href="/app/account/notifications">
                   <img src="/assets/icons/a_mail_mini.png" alt="" />
                   Add FREE Email Notifications
                 </a>

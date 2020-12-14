@@ -19,6 +19,22 @@ const AccountManage = ({ match }) => (
         path={`${match.url}/needfill`}
         render={(props) => <AccountNeedFill {...props} />}
       />
+      <Route
+        path={`${match.url}/havefill`}
+        render={(props) => <AccountNeedFill {...props} />}
+      />
+      <Route
+        path={`${match.url}/listings`}
+        render={(props) => <AccountNeedFill {...props} />}
+      />
+      <Route
+        path={`${match.url}/contactor`}
+        render={(props) => <AccountNeedFill {...props} />}
+      />
+      <Route
+        path={`${match.url}/notifications`}
+        render={(props) => <AccountNeedFill {...props} />}
+      />
       <Redirect to="/error" />
     </Switch>
   </Suspense>

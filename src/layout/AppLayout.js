@@ -12,7 +12,7 @@ const AppLayout = ({ children, history }) => {
     <>
       <Topnav history={history} />
       <Banner />
-      <AppMenu />
+      <AppMenu history={history} />
       <main>
         <div className="container">{children}</div>
       </main>

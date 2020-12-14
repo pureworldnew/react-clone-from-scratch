@@ -25,8 +25,8 @@ const Banner = ({}) => {
               >
                 <DropdownToggle caret>Need Fill</DropdownToggle>
                 <DropdownMenu>
-                  <DropdownItem>Some Action</DropdownItem>
-                  <DropdownItem>Some Action</DropdownItem>
+                  <DropdownItem>Search Need Fill</DropdownItem>
+                  <DropdownItem>Post Need Fill</DropdownItem>
                 </DropdownMenu>
               </Dropdown>
             </li>
@@ -38,8 +38,8 @@ const Banner = ({}) => {
               >
                 <DropdownToggle caret>Have Fill</DropdownToggle>
                 <DropdownMenu>
-                  <DropdownItem>Some Action</DropdownItem>
-                  <DropdownItem>Some Action</DropdownItem>
+                  <DropdownItem>Search Have Fill</DropdownItem>
+                  <DropdownItem>Post Have Fill</DropdownItem>
                 </DropdownMenu>
               </Dropdown>
             </li>
