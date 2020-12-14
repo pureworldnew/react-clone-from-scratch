@@ -4,14 +4,8 @@ import { connect } from 'react-redux';
 
 import AppLayout from '../../layout/AppLayout';
 
-const Gogo = React.lazy(() =>
-  import(/* webpackChunkName: "viwes-gogo" */ './gogo')
-);
-const Dashboards = React.lazy(() =>
-  import(/* webpackChunkName: "dashboards" */ './dashboards')
-);
-const Applications = React.lazy(() =>
-  import(/* webpackChunkName: "applications" */ './applications')
+const AccountManage = React.lazy(() =>
+  import(/* webpackChunkName: "viwes-gogo" */ './accountManage')
 );
 
 const App = ({ match }) => {
@@ -23,23 +17,11 @@ const App = ({ match }) => {
             <Redirect
               exact
               from={`${match.url}/`}
-              to={`${match.url}/user-account`}
+              to={`${match.url}/account`}
             />
             <Route
-              path={`${match.url}/dashboards`}
-              render={(props) => <Dashboards {...props} />}
-            />
-            <Route
-              path={`${match.url}/applications`}
-              render={(props) => <Applications {...props} />}
-            />
-            <Route
-              path={`${match.url}/gogo`}
-              render={(props) => <Gogo {...props} />}
-            />
-            <Route
-              path={`${match.url}/user-account`}
-              render={(props) => <Gogo {...props} />}
+              path={`${match.url}/account`}
+              render={(props) => <AccountManage {...props} />}
             />
             <Redirect to="/error" />
           </Switch>

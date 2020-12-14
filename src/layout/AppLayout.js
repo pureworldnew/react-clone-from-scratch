@@ -5,13 +5,14 @@ import { withRouter } from 'react-router-dom';
 import Topnav from '../containers/navs/Topnav';
 import Banner from '../containers/navs/Banner';
 import Footer from '../containers/navs/Footer';
-import RegisterSection from '../components/pages/RegisterSection';
+import AppMenu from '../containers/navs/AppMenu';
 
 const AppLayout = ({ children, history }) => {
   return (
     <>
       <Topnav history={history} />
       <Banner />
+      <AppMenu />
       <main>
         <div className="container">{children}</div>
       </main>
