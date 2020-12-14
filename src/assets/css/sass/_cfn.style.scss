@@ -10,6 +10,8 @@ Table of Contents
 06:footer
 07:aboutContent
 08:contactorContent
+09:faqContent
+10:contactContent
 */
 
 /* 01.Base */
@@ -599,6 +601,12 @@ body {
   margin-bottom: 40px;
   padding-bottom: 12px;
 }
+.btn-success {
+  background-color: #85b200;
+  border-color: #85b200;
+  padding-left: 30px;
+  padding-right: 30px;
+}
 .calculator-content-section {
   .second-parag {
     font-family: Arial, Helvetica, Geneva, Swiss, SunSans-Regular;
@@ -607,12 +615,7 @@ body {
     box-shadow: 2px 2px 4px 4px #f8f8f8;
     padding: 40px 50px;
   }
-  .btn-success {
-    background-color: #85b200;
-    border-color: #85b200;
-    padding-left: 30px;
-    padding-right: 30px;
-  }
+
   .btn {
     margin-top: 10px;
   }
@@ -625,4 +628,32 @@ body {
   .invisible {
     display: none;
   }
+}
+//10:contactContent
+.fs-24 {
+  font-size: 24px;
+}
+.fs-14 {
+  font-size: 14px;
+}
+.color-ff0000 {
+  color: #ff0000;
+}
+.fs-27 {
+  font-size: 27px;
+}
+.w-304 {
+  width: 304px;
+}
+.h-78 {
+  height: 78px;
+}
+.g-recaptcha-response {
+  width: 250px;
+  height: 40px;
+  border: 1px solid rgb(193, 193, 193);
+  margin: 10px 25px;
+  padding: 0px;
+  resize: none;
+  display: none;
 }
