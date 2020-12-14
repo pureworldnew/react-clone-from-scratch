@@ -20,6 +20,10 @@ const AccountContactor = React.lazy(() =>
   import(/* webpackChunkName: "AccountContactor" */ './accountContactor')
 );
 
+const AccountNotification = React.lazy(() =>
+  import(/* webpackChunkName: "AccountNotification" */ './accountNotification')
+);
+
 const AccountManage = ({ match }) => (
   <Suspense fallback={<div className="loading" />}>
     <Switch>
@@ -46,7 +50,7 @@ const AccountManage = ({ match }) => (
       />
       <Route
         path={`${match.url}/notifications`}
-        render={(props) => <AccountNeedFill {...props} />}
+        render={(props) => <AccountNotification {...props} />}
       />
       <Redirect to="/error" />
     </Switch>
