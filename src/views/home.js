@@ -19,8 +19,9 @@ import CalculatorContnet from '../containers/pages/home/CalculatorContent';
 import ContactContent from '../containers/pages/home/ContactContent';
 import Error from './error';
 
-const Home = (props) => {
-  console.log('props home page is here', props.location.pathname);
+const Home = ({ match }) => {
+  console.log(match);
+  console.log('props home page is here', match.path);
   const getContent = (route) => {
     switch (route) {
       case '/':
@@ -45,9 +46,9 @@ const Home = (props) => {
   };
   return (
     <div>
-      <Topnav />
-      {getBanner(props.location.pathname)}
-      {getContent(props.location.pathname)}
+      <Topnav match={match} />
+      {getBanner(match.path)}
+      {getContent(match.path)}
       <RegisterSection />
       <Footer />
     </div>

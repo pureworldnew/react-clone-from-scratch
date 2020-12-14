@@ -24,81 +24,20 @@ import {
 
 import { searchPath, adminRoot } from '../../constants/defaultValues';
 
-const TopNav = ({
-  history,
-  containerClassnames,
-  menuClickCount,
-  selectedMenuHasSubItems,
-  setContainerClassnamesAction,
-  clickOnMobileMenuAction,
-}) => {
+const TopNav = ({ history, match }) => {
+  console.log('history is here', match);
   const [isOpen, setIsOpen] = useState(false);
 
   const toggle = () => setIsOpen(!isOpen);
 
   const [searchKeyword, setSearchKeyword] = useState('');
 
-  const search = () => {
-    history.push(`${searchPath}?key=${searchKeyword}`);
-    setSearchKeyword('');
-  };
-
-  const handleDocumentClickSearch = (e) => {
-    let isSearchClick = false;
-    if (
-      e.target &&
-      e.target.classList &&
-      (e.target.classList.contains('navbar') ||
-        e.target.classList.contains('simple-icon-magnifier'))
-    ) {
-      isSearchClick = true;
-      if (e.target.classList.contains('simple-icon-magnifier')) {
-        search();
-      }
-    } else if (
-      e.target.parentElement &&
-      e.target.parentElement.classList &&
-      e.target.parentElement.classList.contains('search')
-    ) {
-      isSearchClick = true;
-    }
-
-    if (!isSearchClick) {
-      const input = document.querySelector('.mobile-view');
-      if (input && input.classList) input.classList.remove('mobile-view');
-      removeEventsSearch();
-      setSearchKeyword('');
-    }
-  };
-
-  const removeEventsSearch = () => {
-    document.removeEventListener('click', handleDocumentClickSearch, true);
-  };
+  const [active, setActive] = useState('home');
 
   const handleLogout = () => {
     console.log('logout');
     localStorage.removeItem('gogo_current_user');
     history.push('/');
-  };
-
-  const menuButtonClick = (e, _clickCount, _conClassnames) => {
-    e.preventDefault();
-
-    setTimeout(() => {
-      const event = document.createEvent('HTMLEvents');
-      event.initEvent('resize', false, false);
-      window.dispatchEvent(event);
-    }, 350);
-    setContainerClassnamesAction(
-      _clickCount + 1,
-      _conClassnames,
-      selectedMenuHasSubItems
-    );
-  };
-
-  const mobileMenuButtonClick = (e, _containerClassnames) => {
-    e.preventDefault();
-    clickOnMobileMenuAction(_containerClassnames);
   };
 
   return (
@@ -119,22 +58,22 @@ const TopNav = ({
             className="col-sm-6 justify-content-center mobile-dropdown"
           >
             <Nav className="mr-auto" navbar>
-              <NavItem className="active">
+              <NavItem className={match.path === '/' ? 'active' : ''}>
                 <NavLink href="/">Home</NavLink>
               </NavItem>
-              <NavItem>
+              <NavItem className={match.path === '/about' ? 'active' : ''}>
                 <NavLink href="/about">About</NavLink>
               </NavItem>
-              <NavItem>
+              <NavItem className={match.path === '/contractor' ? 'active' : ''}>
                 <NavLink href="/contractor">Contractor</NavLink>
               </NavItem>
-              <NavItem>
+              <NavItem className={match.path === '/calculator' ? 'active' : ''}>
                 <NavLink href="/calculator">Fill Calculator</NavLink>
               </NavItem>
-              <NavItem>
+              <NavItem className={match.path === '/faq' ? 'active' : ''}>
                 <NavLink href="/faq">FAQ</NavLink>
               </NavItem>
-              <NavItem>
+              <NavItem className={match.path === '/contact' ? 'active' : ''}>
                 <NavLink href="/contact">Contact us</NavLink>
               </NavItem>
             </Nav>

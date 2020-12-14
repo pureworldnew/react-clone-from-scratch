@@ -67,6 +67,18 @@ body {
   display: flex;
   flex-direction: row;
   justify-content: space-around;
+  li.active.nav-item a {
+    color: #765a4e !important;
+    font-weight: 800;
+  }
+  a {
+    color: #333333;
+    font-size: 18px;
+    padding: 0 25px !important;
+  }
+  a:hover {
+    color: #765a4e !important;
+  }
 }
 .signin {
   margin-right: 6px;

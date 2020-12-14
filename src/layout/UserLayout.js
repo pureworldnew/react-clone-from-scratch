@@ -4,10 +4,10 @@ import Banner from '../containers/navs/Banner';
 import Footer from '../containers/navs/Footer';
 import RegisterSection from '../components/pages/RegisterSection';
 
-const UserLayout = ({ children, history }) => {
+const UserLayout = ({ children, history, match }) => {
   return (
     <>
-      <Topnav history={history} />
+      <Topnav match={match} history={history} />
       <Banner />
       <main>
         <div className="container">{children}</div>

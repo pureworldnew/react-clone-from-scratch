@@ -7,10 +7,10 @@ import Banner from '../containers/navs/Banner';
 import Footer from '../containers/navs/Footer';
 import AppMenu from '../containers/navs/AppMenu';
 
-const AppLayout = ({ children, history }) => {
+const AppLayout = ({ children, history, match }) => {
   return (
     <>
-      <Topnav history={history} />
+      <Topnav history={history} match={match} />
       <Banner />
       <AppMenu history={history} />
       <main>

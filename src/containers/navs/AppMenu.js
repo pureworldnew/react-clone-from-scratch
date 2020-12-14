@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 
 const AppMenu = ({ history }) => {
-  console.log('history of Applayout');
+  console.log('history of Applayout', history);
 
   const isActive =
     history.location.pathname === '/app/account/needfill' ? 'active' : '';

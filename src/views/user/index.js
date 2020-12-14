@@ -18,7 +18,7 @@ const ResetPassword = React.lazy(() =>
 
 const User = ({ match }) => {
   return (
-    <UserLayout>
+    <UserLayout match={match}>
       <Suspense fallback={<div className="loading" />}>
         <Switch>
           <Redirect exact from={`${match.url}/`} to={`${match.url}/login`} />
