@@ -50,6 +50,7 @@ const AccountHaveFill = () => {
                         type="radio"
                         value="9.99"
                         checked="checked"
+                        onChange={() => {}}
                       />{' '}
                       1 post <b>$9.99</b> <br />
                       <br clear="all" />

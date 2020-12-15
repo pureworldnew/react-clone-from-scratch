@@ -6,7 +6,7 @@ const HomeContent = ({}) => {
   // eslint-disable-next-line no-plusplus
   for (let i = 0; i < 5; i++) {
     needDirtLists.push(
-      <div className="dirt_block">
+      <div className="dirt_block" key={i}>
         <a href="https://www.cleanfill.net/search/need/Paramus/Alberta">
           <h6>Clean Fill</h6>
         </a>
@@ -18,7 +18,7 @@ const HomeContent = ({}) => {
       </div>
     );
     haveDirtLists.push(
-      <div className="dirt_block">
+      <div className="dirt_block" key={i}>
         <a href="https://www.cleanfill.net/search/need/Paramus/Alberta">
           <h6>Clean Fill</h6>
         </a>

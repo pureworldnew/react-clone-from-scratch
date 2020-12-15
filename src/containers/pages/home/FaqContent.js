@@ -6,13 +6,13 @@ const FaqContent = ({}) => {
       <div className="container">
         <div className="row">
           <div className="row">
-            <div class="col-sm-12">
-              <div class="dirt_heading">
+            <div className="col-sm-12">
+              <div className="dirt_heading">
                 <h2>FAQs</h2>
               </div>
 
               <div>
-                <h2 class="custom_headein_h2">
+                <h2 className="custom_headein_h2">
                   How do I advertise on this web site?
                 </h2>
                 <p>
@@ -23,7 +23,7 @@ const FaqContent = ({}) => {
                 <p>&nbsp;</p>
               </div>
               <div>
-                <h2 class="custom_headein_h2">
+                <h2 className="custom_headein_h2">
                   Who benefits from the use of this web site?
                 </h2>
                 <p>
@@ -35,14 +35,14 @@ const FaqContent = ({}) => {
                 <p>&nbsp;</p>
               </div>
               <div>
-                <h2 class="custom_headein_h2">
+                <h2 className="custom_headein_h2">
                   Can I list more than one site at a time?
                 </h2>
                 <p>There is no limit on the number of listings you may have.</p>
                 <p>&nbsp;</p>
               </div>
               <div>
-                <h2 class="custom_headein_h2">
+                <h2 className="custom_headein_h2">
                   What is this web site all about?
                 </h2>
                 <p>
@@ -54,7 +54,7 @@ const FaqContent = ({}) => {
                 <p>&nbsp;</p>
               </div>
               <div>
-                <h2 class="custom_headein_h2">Why sign up ?</h2>
+                <h2 className="custom_headein_h2">Why sign up ?</h2>
                 <p>
                   Why sign up ? its FREE! why wouldn't you? Get access to all
                   'need' and 'have fill' listings, post all the listings you
@@ -67,7 +67,7 @@ const FaqContent = ({}) => {
                 <p>&nbsp;</p>
               </div>
               <div>
-                <h2 class="custom_headein_h2">
+                <h2 className="custom_headein_h2">
                   {' '}
                   What is the standard units of measure?
                 </h2>
@@ -83,7 +83,7 @@ const FaqContent = ({}) => {
                 <p>&nbsp;</p>
               </div>
               <div>
-                <h2 class="custom_headein_h2">What is clean fill dirt?</h2>
+                <h2 className="custom_headein_h2">What is clean fill dirt?</h2>
                 <p>
                   Thats really the million-dollar question, isnt it? Clean fill
                   dirt is a dirt fill that is easy to explain, but somewhat odd
@@ -99,7 +99,7 @@ const FaqContent = ({}) => {
                 <p>&nbsp;</p>
               </div>
               <div>
-                <h2 class="custom_headein_h2">
+                <h2 className="custom_headein_h2">
                   What is clean fill dirt (and why homeowners should care)
                 </h2>
                 <p>
@@ -160,7 +160,7 @@ const FaqContent = ({}) => {
                 <p>&nbsp;</p>
               </div>
               <div>
-                <h2 class="custom_headein_h2">
+                <h2 className="custom_headein_h2">
                   What cant clean fill be used for?
                 </h2>
                 <p>
@@ -180,7 +180,7 @@ const FaqContent = ({}) => {
                 <p>&nbsp;</p>
               </div>
               <div>
-                <h2 class="custom_headein_h2">
+                <h2 className="custom_headein_h2">
                   Why would someone want to give clean fill away?
                 </h2>
                 <p>
@@ -208,7 +208,7 @@ const FaqContent = ({}) => {
                 <p>&nbsp;</p>
               </div>
               <div>
-                <h2 class="custom_headein_h2">
+                <h2 className="custom_headein_h2">
                   The barter system of clean fill dirt?
                 </h2>
                 <p>
@@ -253,7 +253,7 @@ const FaqContent = ({}) => {
                 <p>&nbsp;</p>
               </div>
               <div>
-                <h2 class="custom_headein_h2">
+                <h2 className="custom_headein_h2">
                   What makes clean fill dirt so great?
                 </h2>
                 <p>
@@ -272,7 +272,7 @@ const FaqContent = ({}) => {
                 <p>&nbsp;</p>
               </div>
               <div>
-                <h2 class="custom_headein_h2">
+                <h2 className="custom_headein_h2">
                   Using earth movers and clean fill dirt
                 </h2>
                 <p>
@@ -290,7 +290,7 @@ const FaqContent = ({}) => {
                 <p>&nbsp;</p>
               </div>
               <div>
-                <h2 class="custom_headein_h2">
+                <h2 className="custom_headein_h2">
                   How does it relate to earth movers?
                 </h2>
                 <p>

@@ -55,7 +55,7 @@ const ContactContent = ({}) => {
                   <div className="row">
                     <div className="col-md-6">
                       <div className="md-form mb-0">
-                        <label for="name" className="">
+                        <label htmlFor="name" className="">
                           Your name
                         </label>
                         <input
@@ -69,7 +69,7 @@ const ContactContent = ({}) => {
 
                     <div className="col-md-6">
                       <div className="md-form mb-0">
-                        <label for="email" className="">
+                        <label htmlFor="email" className="">
                           Your email
                         </label>
                         <input
@@ -85,7 +85,7 @@ const ContactContent = ({}) => {
                   <div className="row">
                     <div className="col-md-12">
                       <div className="md-form mb-0">
-                        <label for="subject" className="">
+                        <label htmlFor="subject" className="">
                           Subject
                         </label>
                         <input
@@ -101,7 +101,7 @@ const ContactContent = ({}) => {
                   <div className="row">
                     <div className="col-md-12">
                       <div className="md-form">
-                        <label for="message">Your message</label>
+                        <label htmlFor="message">Your message</label>
                         <textarea
                           type="text"
                           id="message"
@@ -127,7 +127,7 @@ const ContactContent = ({}) => {
                             height="78"
                             role="presentation"
                             name="a-3pabs5i0wojk"
-                            frameborder="0"
+                            frameBorder="0"
                             scrolling="no"
                             sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-top-navigation allow-modals allow-popups-to-escape-sandbox"
                           ></iframe>

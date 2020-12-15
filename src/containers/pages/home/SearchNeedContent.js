@@ -35,7 +35,7 @@ const SearchNeedContent = ({}) => {
                     name="country"
                     id="country"
                     className="form-control"
-                    onchange="getCity('https://www.cleanfill.net/findcity.php?country='+this.value)"
+                    onChange={() => {}}
                   >
                     <option value="Canada">Canada</option>
                     <option value="United States">United States</option>
@@ -96,6 +96,7 @@ const SearchNeedContent = ({}) => {
                     id="city"
                     value=""
                     maxLength="50"
+                    onChange={() => {}}
                   />
                   <br clear="all" />
 

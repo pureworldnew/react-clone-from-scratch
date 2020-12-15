@@ -28,10 +28,7 @@ const AccountNeedFill = () => {
               <div className="col-sm-12 new_style">
                 <h3>
                   <img src="/assets/icons/a_down_maxi.png" alt="" />
-                  <a
-                    onClick="xajax_clear_form(xajax.getFormValues('pform'));"
-                    href="/"
-                  >
+                  <a onClick={() => {}} href="/">
                     Add need fill
                     <p>
                       <i>*</i> means mandatory, please fill in the form below
@@ -73,6 +70,7 @@ const AccountNeedFill = () => {
                       maxLength="100"
                       id="address"
                       value=""
+                      onChange={() => {}}
                     />
                     <br />
                     <label className="control-label">Country :</label>
@@ -230,6 +228,7 @@ const AccountNeedFill = () => {
                       id="city"
                       value=""
                       maxLength="50"
+                      onChange={() => {}}
                     />
                     <br />
                     <label className="control-label">
@@ -242,6 +241,7 @@ const AccountNeedFill = () => {
                       id="quantity"
                       value=""
                       maxLength="100"
+                      onChange={() => {}}
                     />
                     <br />
                     <label className="control-label">
@@ -251,9 +251,10 @@ const AccountNeedFill = () => {
                       name="details"
                       type="text"
                       className="form-control"
-                      maxlength="120"
+                      maxLength="120"
                       id="details"
                       value=""
+                      onChange={() => {}}
                     />
                     <br />
                   </div>
@@ -284,7 +285,7 @@ const AccountNeedFill = () => {
                             type="checkbox"
                             value="1"
                             className="clay"
-                            onClick="ckeck_count(this)"
+                            onClick={() => {}}
                           />
                           &nbsp; Clay
                         </label>
@@ -294,7 +295,7 @@ const AccountNeedFill = () => {
                             type="checkbox"
                             value="1"
                             className="sand"
-                            onClick="ckeck_count(this)"
+                            onClick={() => {}}
                           />
                           &nbsp; Sand{' '}
                         </label>
@@ -304,7 +305,7 @@ const AccountNeedFill = () => {
                             type="checkbox"
                             className="sand_clay"
                             value="1"
-                            onClick="ckeck_count(this)"
+                            onClick={() => {}}
                           />
                           &nbsp; Sand Clay
                         </label>
@@ -332,7 +333,7 @@ const AccountNeedFill = () => {
                             type="checkbox"
                             value="1"
                             className="clean_fill"
-                            onClick="ckeck_count(this)"
+                            onClick={() => {}}
                           />
                           &nbsp; Clean Fill{' '}
                         </label>
@@ -342,7 +343,7 @@ const AccountNeedFill = () => {
                             type="checkbox"
                             value="1"
                             className="rough_fill"
-                            onClick="ckeck_count(this)"
+                            onClick={() => {}}
                           />
                           &nbsp; Rough Fill
                         </label>
@@ -370,7 +371,7 @@ const AccountNeedFill = () => {
                             type="checkbox"
                             value="1"
                             className="gravel"
-                            onClick="ckeck_count(this)"
+                            onClick={() => {}}
                           />
                           &nbsp; Gravel{' '}
                         </label>
@@ -380,7 +381,7 @@ const AccountNeedFill = () => {
                             type="checkbox"
                             value="1"
                             className="recycled_asphalt"
-                            onClick="ckeck_count(this)"
+                            onClick={() => {}}
                           />
                           &nbsp; Recycled Asphalt{' '}
                         </label>
@@ -390,7 +391,7 @@ const AccountNeedFill = () => {
                             type="checkbox"
                             value="1"
                             className="recycled_base_material"
-                            onClick="ckeck_count(this)"
+                            onClick={() => {}}
                           />
                           &nbsp; Recycled Base Material{' '}
                         </label>
@@ -400,7 +401,7 @@ const AccountNeedFill = () => {
                             type="checkbox"
                             value="1"
                             className="recycled_concrete"
-                            onClick="ckeck_count(this)"
+                            onClick={() => {}}
                           />
                           &nbsp; Recycled Concrete
                         </label>
@@ -428,7 +429,7 @@ const AccountNeedFill = () => {
                             type="checkbox"
                             value="1"
                             className="peat"
-                            onClick="ckeck_count(this)"
+                            onClick={() => {}}
                           />
                           &nbsp; Peat{' '}
                         </label>
@@ -438,7 +439,7 @@ const AccountNeedFill = () => {
                             type="checkbox"
                             value="1"
                             className="topsoil_average"
-                            onClick="ckeck_count(this)"
+                            onClick={() => {}}
                           />
                           &nbsp; Topsoil-Average
                         </label>
@@ -448,7 +449,7 @@ const AccountNeedFill = () => {
                             type="checkbox"
                             value="1"
                             className="topsoil_clean"
-                            onClick="ckeck_count(this)"
+                            onClick={() => {}}
                           />
                           &nbsp; Topsoil-Clean{' '}
                         </label>
@@ -458,7 +459,7 @@ const AccountNeedFill = () => {
                             type="checkbox"
                             value="1"
                             className="topsoil_economy"
-                            onClick="ckeck_count(this)"
+                            onClick={() => {}}
                           />
                           &nbsp; Topsoil-Economy
                         </label>
@@ -484,7 +485,7 @@ const AccountNeedFill = () => {
                             type="checkbox"
                             value="1"
                             className="ashpalt_mix"
-                            onClick="ckeck_count(this)"
+                            onClick={() => {}}
                           />
                           &nbsp; Ashpalt Mix{' '}
                         </label>
@@ -494,7 +495,7 @@ const AccountNeedFill = () => {
                             type="checkbox"
                             value="1"
                             className="asphalt_chunks"
-                            onClick="ckeck_count(this)"
+                            onClick={() => {}}
                           />
                           &nbsp; Asphalt Chunks{' '}
                         </label>
@@ -504,7 +505,7 @@ const AccountNeedFill = () => {
                             type="checkbox"
                             value="1"
                             className="boulders"
-                            onClick="ckeck_count(this)"
+                            onClick={() => {}}
                           />
                           &nbsp; Boulders{' '}
                         </label>
@@ -514,7 +515,7 @@ const AccountNeedFill = () => {
                             type="checkbox"
                             value="1"
                             className="concrete_chunks"
-                            onClick="ckeck_count(this)"
+                            onClick={() => {}}
                           />
                           &nbsp; Concrete Chunks
                         </label>
@@ -525,7 +526,7 @@ const AccountNeedFill = () => {
                             type="checkbox"
                             value="1"
                             className="concrete_ready_mix"
-                            onClick="ckeck_count(this)"
+                            onClick={() => {}}
                           />
                           &nbsp; Concrete Ready Mix{' '}
                         </label>
@@ -535,7 +536,7 @@ const AccountNeedFill = () => {
                             type="checkbox"
                             value="1"
                             className="decorative_rock"
-                            onClick="ckeck_count(this)"
+                            onClick={() => {}}
                           />
                           &nbsp; Decorative Rock{' '}
                         </label>
@@ -545,7 +546,7 @@ const AccountNeedFill = () => {
                             type="checkbox"
                             value="1"
                             className="demolition_materials"
-                            onClick="ckeck_count(this)"
+                            onClick={() => {}}
                           />
                           &nbsp; Demolition Materials
                         </label>
@@ -556,7 +557,7 @@ const AccountNeedFill = () => {
                             type="checkbox"
                             value="1"
                             className="mulch"
-                            onClick="ckeck_count(this)"
+                            onClick={() => {}}
                           />
                           &nbsp; Mulch
                         </label>
@@ -567,7 +568,7 @@ const AccountNeedFill = () => {
                             type="checkbox"
                             value="1"
                             className="rip_rap"
-                            onClick="ckeck_count(this)"
+                            onClick={() => {}}
                           />
                           &nbsp; Rip Rap{' '}
                         </label>
@@ -577,7 +578,7 @@ const AccountNeedFill = () => {
                             type="checkbox"
                             value="1"
                             className="river_rock"
-                            onClick="ckeck_count(this)"
+                            onClick={() => {}}
                           />
                           &nbsp; River Rock{' '}
                         </label>
@@ -587,7 +588,7 @@ const AccountNeedFill = () => {
                             type="checkbox"
                             value="1"
                             className="wood_chips"
-                            onClick="ckeck_count(this)"
+                            onClick={() => {}}
                           />
                           &nbsp; Wood Chips
                         </label>

@@ -28,7 +28,15 @@ const Banner = ({ history }) => {
                   <DropdownItem onClick={() => history.push('/search/need')}>
                     Search Need Fill
                   </DropdownItem>
-                  <DropdownItem>Post Need Fill</DropdownItem>
+                  <DropdownItem
+                    onClick={() =>
+                      localStorage.getItem('gogo_current_user')
+                        ? history.push('/app/account/needfill')
+                        : history.push('/user/login')
+                    }
+                  >
+                    Post Need Fill
+                  </DropdownItem>
                 </DropdownMenu>
               </Dropdown>
             </li>
@@ -43,7 +51,15 @@ const Banner = ({ history }) => {
                   <DropdownItem onClick={() => history.push('/search/have')}>
                     Search Have Fill
                   </DropdownItem>
-                  <DropdownItem>Post Have Fill</DropdownItem>
+                  <DropdownItem
+                    onClick={() =>
+                      localStorage.getItem('gogo_current_user')
+                        ? history.push('/app/account/havefill')
+                        : history.push('/user/login')
+                    }
+                  >
+                    Post Have Fill
+                  </DropdownItem>
                 </DropdownMenu>
               </Dropdown>
             </li>

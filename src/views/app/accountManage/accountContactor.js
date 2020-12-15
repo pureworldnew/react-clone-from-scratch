@@ -31,6 +31,7 @@ const AccountContactor = () => {
                           type="radio"
                           value="24.99"
                           checked="checked"
+                          onChange={() => {}}
                         />{' '}
                         1 post <b>$24.99</b> <br />
                         <br clear="all" />
@@ -111,7 +112,7 @@ const AccountContactor = () => {
                   id="pform"
                   action=""
                   method="post"
-                  enctype="multipart/form-data"
+                  encType="multipart/form-data"
                   className="form-horizontal"
                 >
                   <div className="right_info invisible">
@@ -120,10 +121,7 @@ const AccountContactor = () => {
                         src="https://www.cleanfill.net/themes/modern/icons/a_contactor_maxi.png"
                         alt=""
                       />
-                      <a
-                        id="add_new"
-                        onclick="xajax_clear_form(xajax.getFormValues('pform'));"
-                      >
+                      <a id="add_new" onClick={() => {}}>
                         Add contactor
                         <p>
                           <i>*</i> means mandatory, please fill in the form
@@ -150,6 +148,7 @@ const AccountContactor = () => {
                             id="businessname"
                             value=""
                             maxLength="50"
+                            onChange={() => {}}
                           />
                           <br clear="all" />
                           <label className="control-label">Logo :</label>
@@ -158,6 +157,7 @@ const AccountContactor = () => {
                             type="file"
                             className="inp1"
                             id="logo"
+                            onChange={() => {}}
                           />
                           <img
                             src="https://www.cleanfill.net/defecto.jpg"
@@ -177,6 +177,7 @@ const AccountContactor = () => {
                             id="contactname"
                             value=""
                             maxLength="100"
+                            onChange={() => {}}
                           />
                           <br clear="all" />
                           <label className="control-label">
@@ -189,6 +190,7 @@ const AccountContactor = () => {
                             id="phone"
                             value=""
                             maxLength="20"
+                            onChange={() => {}}
                           />
                           <br clear="all" />
                           <label className="control-label">
@@ -201,6 +203,7 @@ const AccountContactor = () => {
                             maxLength="100"
                             id="businessaddress"
                             value=""
+                            onChange={() => {}}
                           />
                           <br clear="all" />
                           <label className="control-label">
@@ -213,6 +216,7 @@ const AccountContactor = () => {
                             id="businesscity"
                             value=""
                             maxLength="50"
+                            onChange={() => {}}
                           />
                           <br clear="all" />
                           <label className="control-label">
@@ -225,6 +229,7 @@ const AccountContactor = () => {
                             id="businesssuburb"
                             value=""
                             maxLength="50"
+                            onChange={() => {}}
                           />
                           <br clear="all" />
                           <label className="control-label">
@@ -262,6 +267,7 @@ const AccountContactor = () => {
                             id="postcode"
                             value=""
                             maxLength="10"
+                            onChange={() => {}}
                           />
                           <br clear="all" />
                           <label className="control-label">Website :</label>
@@ -272,6 +278,7 @@ const AccountContactor = () => {
                             id="website"
                             value=""
                             maxLength="200"
+                            onChange={() => {}}
                           />
                           <br clear="all" />
                           <label className="control-label">
@@ -284,6 +291,7 @@ const AccountContactor = () => {
                             id="email"
                             value=""
                             maxLength="50"
+                            onChange={() => {}}
                           />
                           <br clear="all" />
                           <label className="control-label">
@@ -307,6 +315,7 @@ const AccountContactor = () => {
                                   type="checkbox"
                                   value="1"
                                   id="civil_construction"
+                                  onChange={() => {}}
                                 />
                                 &nbsp; Civil Construction
                               </label>
@@ -317,6 +326,7 @@ const AccountContactor = () => {
                                   type="checkbox"
                                   value="1"
                                   id="commercial_building"
+                                  onChange={() => {}}
                                 />
                                 &nbsp; Commercial Building{' '}
                               </label>
@@ -327,6 +337,7 @@ const AccountContactor = () => {
                                   type="checkbox"
                                   value="1"
                                   id="residentia_building"
+                                  onChange={() => {}}
                                 />
                                 &nbsp; Residential Building{' '}
                               </label>
@@ -337,6 +348,7 @@ const AccountContactor = () => {
                                   type="checkbox"
                                   value="1"
                                   id="pool_builders"
+                                  onChange={() => {}}
                                 />
                                 &nbsp; Pool Builders
                               </label>
@@ -347,6 +359,7 @@ const AccountContactor = () => {
                                   type="checkbox"
                                   value="1"
                                   id="excavation"
+                                  onChange={() => {}}
                                 />
                                 &nbsp; Excavation
                               </label>
@@ -357,6 +370,7 @@ const AccountContactor = () => {
                                   type="checkbox"
                                   value="1"
                                   id="earth_moving"
+                                  onChange={() => {}}
                                 />
                                 &nbsp; Earth Moving
                               </label>{' '}
@@ -367,6 +381,7 @@ const AccountContactor = () => {
                                   type="checkbox"
                                   value="1"
                                   id="landscaping"
+                                  onChange={() => {}}
                                 />
                                 &nbsp; Landscaping
                               </label>
@@ -377,6 +392,7 @@ const AccountContactor = () => {
                                   type="checkbox"
                                   value="1"
                                   id="equipment_hire"
+                                  onChange={() => {}}
                                 />
                                 &nbsp; Equipment Hire{' '}
                               </label>
@@ -387,6 +403,7 @@ const AccountContactor = () => {
                                   type="checkbox"
                                   value="1"
                                   id="testing_certification"
+                                  onChange={() => {}}
                                 />
                                 &nbsp; Testing and Certification
                               </label>
@@ -397,6 +414,7 @@ const AccountContactor = () => {
                                   type="checkbox"
                                   value="1"
                                   id="plumbing"
+                                  onChange={() => {}}
                                 />
                                 &nbsp; Plumbing{' '}
                               </label>
@@ -407,6 +425,7 @@ const AccountContactor = () => {
                                   type="checkbox"
                                   value="1"
                                   id="electrical"
+                                  onChange={() => {}}
                                 />
                                 &nbsp; Electrical{' '}
                               </label>
@@ -428,7 +447,7 @@ const AccountContactor = () => {
                               type="checkbox"
                               value="1"
                               id="terms"
-                              onclick="check_available2('add')"
+                              onClick={() => {}}
                             />
                             &nbsp;&nbsp; I agree to the Terms of Use of this
                             site. You must agree to the terms to continue.
@@ -441,6 +460,7 @@ const AccountContactor = () => {
                               id="add"
                               disabled="disabled"
                               value="Post Your Contactor Fill Listing"
+                              onClick={() => {}}
                             />
                           </div>
 

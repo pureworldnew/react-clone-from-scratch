@@ -41,7 +41,7 @@ const validateEmail = (value) => {
 
 const Login = ({ history, loading, error, loginUserAction }) => {
   const [username, setUsername] = useState('test_username');
-  const [password] = useState('test_password');
+  const [password, setPassword] = useState('test_password');
 
   const onUserLogin = (event) => {
     event.preventDefault();
@@ -82,6 +82,7 @@ const Login = ({ history, loading, error, loginUserAction }) => {
                     value={password}
                     maxLength="20"
                     placeholder="passsword"
+                    onChange={(e) => setPassword(e)}
                   />
                   <br clear="all" />
                   <input

@@ -16,26 +16,16 @@ import {
 // import { NavLink } from 'react-router-dom';
 import { connect } from 'react-redux';
 
-import {
-  setContainerClassnames,
-  clickOnMobileMenu,
-  changeLocale,
-} from '../../redux/actions';
-
 import { searchPath, adminRoot } from '../../constants/defaultValues';
 
-const TopNav = ({ history, match }) => {
-  console.log('history is here', match);
+const TopNav = ({ history, match, user }) => {
   const [isOpen, setIsOpen] = useState(false);
 
   const toggle = () => setIsOpen(!isOpen);
 
-  const [searchKeyword, setSearchKeyword] = useState('');
-
-  const [active, setActive] = useState('home');
+  const [welcomeOpen, setWelcomeOpen] = useState(false);
 
   const handleLogout = () => {
-    console.log('logout');
     localStorage.removeItem('gogo_current_user');
     history.push('/');
   };
@@ -79,7 +69,13 @@ const TopNav = ({ history, match }) => {
             </Nav>
           </Collapse>
           <div className="col-sm-3 header_account justify-content-md-center d-lg-flex mw-100">
-            <ul>
+            <ul
+              className={
+                localStorage.getItem('gogo_current_user')
+                  ? 'd-none login-before'
+                  : 'login-before'
+              }
+            >
               <li className="mobile_logo d-lg-none">
                 <a className="navbar-brand" href="/">
                   <img src="/assets/images/logo.png" alt="mobile logo" />
@@ -98,6 +94,48 @@ const TopNav = ({ history, match }) => {
                 </a>
               </li>
             </ul>
+            <ul
+              className={
+                localStorage.getItem('gogo_current_user')
+                  ? 'login-after'
+                  : 'd-none login-after'
+              }
+            >
+              <li className="mobile_logo d-lg-none">
+                <a className="navbar-brand" href="/">
+                  <img src="/assets/images/logo.png" alt="mobile logo" />
+                </a>
+              </li>
+              <li className="signin">
+                <a onClick={() => setWelcomeOpen(!welcomeOpen)}>
+                  <img src="/assets/images/sign_in_icon.png" alt="signin" />
+                  Welcome
+                </a>
+                <ul
+                  className={
+                    welcomeOpen
+                      ? 'dropdown-menu dropdown-menu-right show'
+                      : 'dropdown-menu dropdown-menu-right'
+                  }
+                >
+                  <li>
+                    <a href="/app/account/profile">MY ACCOUNT</a>
+                  </li>
+                  <li>
+                    <a href="/app/account/info">EDIT ACCOUNT</a>
+                  </li>
+                  <li>
+                    <a href="/app/account/notifications">EMAIL NOTIFICATION</a>
+                  </li>
+                </ul>
+              </li>
+              <li className="signup">
+                <a onClick={() => handleLogout()}>
+                  <img src="/assets/images/sign_up_icon.png" alt="signup" />
+                  Logout
+                </a>
+              </li>
+            </ul>
           </div>
         </div>
       </Navbar>
@@ -105,18 +143,10 @@ const TopNav = ({ history, match }) => {
   );
 };
 
-const mapStateToProps = ({ menu }) => {
-  const { containerClassnames, menuClickCount, selectedMenuHasSubItems } = menu;
+const mapStateToProps = ({ authUser }) => {
+  const { user } = authUser;
   return {
-    containerClassnames,
-    menuClickCount,
-    selectedMenuHasSubItems,
+    user,
   };
 };
-export default injectIntl(
-  connect(mapStateToProps, {
-    setContainerClassnamesAction: setContainerClassnames,
-    clickOnMobileMenuAction: clickOnMobileMenu,
-    changeLocaleAction: changeLocale,
-  })(TopNav)
-);
+export default injectIntl(connect(mapStateToProps, {})(TopNav));

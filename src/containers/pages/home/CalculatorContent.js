@@ -279,7 +279,7 @@ const CalculatorContnet = () => {
                           id="calculate"
                           value="Calculate"
                           className="btn btn-lg btn-success mr-1"
-                          onClick="calculate_volume(xajax.getFormValues('rform'))"
+                          onClick={() => {}}
                         />
                         <input
                           name="v_reset"
@@ -287,7 +287,7 @@ const CalculatorContnet = () => {
                           id="convert"
                           value="« RESET"
                           className="btn btn-lg btn-danger"
-                          onClick="reset_volume()"
+                          onClick={() => {}}
                         />
                       </p>
 
@@ -333,6 +333,7 @@ const CalculatorContnet = () => {
                         id="value"
                         value=""
                         maxLength="10"
+                        onChange={() => {}}
                       />
                       <div className="cal_err" id="value_err"></div>
                       <br clear="all" />
@@ -344,7 +345,7 @@ const CalculatorContnet = () => {
                           id="convert"
                           value="Convert"
                           className="btn btn-lg btn-success mr-1"
-                          onClick="convert_value(xajax.getFormValues('rform'))"
+                          onClick={() => {}}
                         />
                         <input
                           name="u_reset"
@@ -352,7 +353,7 @@ const CalculatorContnet = () => {
                           id="convert"
                           value="« RESET"
                           className="btn btn-lg btn-danger"
-                          onClick="reset_convert()"
+                          onClick={() => {}}
                         />
                       </p>
 

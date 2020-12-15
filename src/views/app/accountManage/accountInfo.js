@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Start = ({ match }) => (
+const AccountInfo = ({ match }) => (
   <section className="section-content dirt-section">
     <div className="container">
       <div className="row">
@@ -45,7 +45,8 @@ const Start = ({ match }) => (
                       className="form-control"
                       id="name"
                       value="FillManagement"
-                      maxlength="100"
+                      maxLength="100"
+                      onChange={() => console.log('name change')}
                     />
                     <br />
                     <label className="control-label">
@@ -57,7 +58,8 @@ const Start = ({ match }) => (
                       className="form-control"
                       id="address"
                       value="1056 -3 Old Derry Rd"
-                      maxlength="100"
+                      maxLength="100"
+                      onChange={() => console.log('name change')}
                     />
                     <br />
                     <label className="control-label">
@@ -69,7 +71,8 @@ const Start = ({ match }) => (
                       className="form-control"
                       id="city"
                       value="Mississauga"
-                      maxlength="50"
+                      maxLength="50"
+                      onChange={() => console.log('name change')}
                     />
                     <br />
                     <label className="control-label">
@@ -100,7 +103,7 @@ const Start = ({ match }) => (
                           &nbsp;&nbsp;Northwest Territories
                         </option>
                         <option value="Nunavut">&nbsp;&nbsp;Nunavut</option>
-                        <option value="Ontario" selected="selected">
+                        <option value="Ontario" defaultValue>
                           &nbsp;&nbsp;Ontario
                         </option>
                         <option value="Prince Edward Island">
@@ -126,9 +129,11 @@ const Start = ({ match }) => (
                       name="country"
                       id="country"
                       className="form-control"
-                      onchange="getCity('https://www.cleanfill.net/findcity.php?country='+this.value)"
+                      onChange={() => {
+                        console.log('country console');
+                      }}
                     >
-                      <option value="Canada" selected="selected">
+                      <option value="Canada" defaultValue>
                         Canada
                       </option>
                       <option value="United States">United States</option>
@@ -148,7 +153,8 @@ const Start = ({ match }) => (
                       className="form-control"
                       id="zipcode"
                       value="L5W 1A1"
-                      maxlength="10"
+                      maxLength="10"
+                      onChange={() => console.log('zipcode')}
                     />
                     <br />
                     <label className="control-label">
@@ -161,7 +167,8 @@ const Start = ({ match }) => (
                       className="form-control"
                       id="phone"
                       value="647 996 3455"
-                      maxlength="20"
+                      maxLength="20"
+                      onChange={() => console.log('phone console')}
                     />
                     <br />
                     <label className="control-label">
@@ -174,13 +181,14 @@ const Start = ({ match }) => (
                       className="form-control"
                       id="fax"
                       value=""
-                      maxlength="20"
+                      maxLength="20"
+                      onChange={() => console.log('fax onchange')}
                     />
                     <br />
                     <label className="control-label">Account type :</label>
                     <select name="atype" className="form-control" id="atype">
                       <option value="Personal">&nbsp;Personal</option>
-                      <option value="Contactor" selected="selected">
+                      <option value="Contactor" defaultValue>
                         &nbsp;Contactor
                       </option>
                     </select>
@@ -202,13 +210,13 @@ const Start = ({ match }) => (
                       User Name <em className="error_">*</em> :
                     </label>
                     <input
-                      readonly="readonly"
+                      readOnly
                       name="username"
                       type="text"
                       className="form-control"
                       id="username"
                       value="fillm"
-                      maxlength="20"
+                      maxLength="20"
                     />
                     <br />
                     <label className="control-label">
@@ -220,7 +228,8 @@ const Start = ({ match }) => (
                       className="form-control"
                       id="fullname"
                       value="fill Management"
-                      maxlength="100"
+                      maxLength="100"
+                      onChange={() => {}}
                     />
                     <br />
                     <label className="control-label">
@@ -232,7 +241,8 @@ const Start = ({ match }) => (
                       className="form-control"
                       id="email"
                       value="info@fillmanagement.com"
-                      maxlength="50"
+                      maxLength="50"
+                      onChange={() => {}}
                     />
                     <br />
                     <label className="control-label">
@@ -244,7 +254,8 @@ const Start = ({ match }) => (
                       className="form-control"
                       id="password"
                       value=""
-                      maxlength="20"
+                      maxLength="20"
+                      onChange={() => {}}
                     />
                     <br />
                     <label className="control-label">
@@ -256,7 +267,8 @@ const Start = ({ match }) => (
                       className="form-control"
                       id="cpassword"
                       value=""
-                      maxlength="20"
+                      maxLength="20"
+                      onChange={() => {}}
                     />
                     <br />
                     <div className="mb-20 id_filltype">Contact Information</div>
@@ -267,7 +279,7 @@ const Start = ({ match }) => (
                         className="checkbox_"
                         value="same"
                         id="same"
-                        onclick="same_info()"
+                        onClick={() => console.log('checkbox ')}
                       />
                       &nbsp;&nbsp; Same Information
                     </label>{' '}
@@ -281,7 +293,8 @@ const Start = ({ match }) => (
                       className="form-control"
                       id="c_name"
                       value="FillManagement"
-                      maxlength="100"
+                      maxLength="100"
+                      onChange={() => {}}
                     />
                     <br />
                     <label className="control-label">
@@ -294,7 +307,8 @@ const Start = ({ match }) => (
                       className="form-control"
                       id="c_phone"
                       value="2898022123"
-                      maxlength="20"
+                      maxLength="20"
+                      onChange={() => {}}
                     />
                     <br />
                     <label className="control-label">
@@ -306,7 +320,8 @@ const Start = ({ match }) => (
                       className="form-control"
                       id="c_ext"
                       value=""
-                      maxlength="20"
+                      maxLength="20"
+                      onChange={() => {}}
                     />
                     <br />
                     <label className="control-label">
@@ -319,7 +334,8 @@ const Start = ({ match }) => (
                       className="form-control"
                       id="c_fax"
                       value=""
-                      maxlength="20"
+                      maxLength="20"
+                      onChange={() => {}}
                     />
                     <br />
                     <label className="control-label">
@@ -331,7 +347,8 @@ const Start = ({ match }) => (
                       className="form-control"
                       id="c_email"
                       value="info@fillmanagement.com"
-                      maxlength="50"
+                      maxLength="50"
+                      onChange={() => {}}
                     />
                   </div>
                 </div>
@@ -343,4 +360,4 @@ const Start = ({ match }) => (
     </div>
   </section>
 );
-export default Start;
+export default AccountInfo;

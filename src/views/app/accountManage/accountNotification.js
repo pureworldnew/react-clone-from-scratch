@@ -53,9 +53,9 @@ const AccountNotification = () => {
                     name="country"
                     id="country"
                     className="form-control"
-                    onChange="getCity('https://www.cleanfill.net/findcity.php?country='+this.value)"
+                    onChange={() => {}}
                   >
-                    <option value="Canada" selected="selected">
+                    <option value="Canada" defaultValue>
                       &nbsp;&nbsp;Canada
                     </option>
                     <option value="United States">
@@ -98,7 +98,7 @@ const AccountNotification = () => {
                         &nbsp;&nbsp;Northwest Territories
                       </option>
                       <option value="Nunavut">&nbsp;&nbsp;Nunavut</option>
-                      <option value="Ontario" selected="selected">
+                      <option value="Ontario" defaultValue>
                         &nbsp;&nbsp;Ontario
                       </option>
                       <option value="Prince Edward Island">
@@ -122,7 +122,7 @@ const AccountNotification = () => {
                       id="notification"
                       value="1"
                       checked={emailStatus ? 'checked' : ''}
-                      onClick={() => {
+                      onChange={() => {
                         setEmailStatus(!emailStatus);
                       }}
                     />

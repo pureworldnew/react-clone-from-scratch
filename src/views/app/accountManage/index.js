@@ -4,6 +4,11 @@ import { Redirect, Route, Switch } from 'react-router-dom';
 const AccountInfo = React.lazy(() =>
   import(/* webpackChunkName: "accountInfo" */ './accountInfo')
 );
+
+const AccountOverview = React.lazy(() =>
+  import(/* webpackChunkName: "accountInfo" */ './accountOverview')
+);
+
 const AccountNeedFill = React.lazy(() =>
   import(/* webpackChunkName: "accountNeedFill" */ './accountNeedFill')
 );
@@ -27,10 +32,14 @@ const AccountNotification = React.lazy(() =>
 const AccountManage = ({ match }) => (
   <Suspense fallback={<div className="loading" />}>
     <Switch>
-      <Redirect exact from={`${match.url}/`} to={`${match.url}/info`} />
+      <Redirect exact from={`${match.url}/`} to={`${match.url}/profile`} />
       <Route
         path={`${match.url}/info`}
         render={(props) => <AccountInfo {...props} />}
+      />
+      <Route
+        path={`${match.url}/profile`}
+        render={(props) => <AccountOverview {...props} />}
       />
       <Route
         path={`${match.url}/needfill`}

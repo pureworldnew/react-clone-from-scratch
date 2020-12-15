@@ -22,8 +22,6 @@ import SearchNeedContent from '../containers/pages/home/SearchNeedContent';
 import SearchHaveContent from '../containers/pages/home/SearchHaveContent';
 
 const Home = ({ match, history }) => {
-  console.log(match);
-  console.log('props home page is here', match.path);
   const getContent = (route) => {
     switch (route) {
       case '/':
@@ -52,7 +50,7 @@ const Home = ({ match, history }) => {
   };
   return (
     <div>
-      <Topnav match={match} />
+      <Topnav match={match} history={history} />
       {getBanner(match.path)}
       {getContent(match.path)}
       <RegisterSection />
